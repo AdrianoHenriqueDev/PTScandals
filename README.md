@@ -1,8 +1,10 @@
 # Dossiê Interativo: Escândalos de Corrupção nos Governos do PT (2003–2024)
 
-> 🌐 **Acesse a versão online ao vivo:** [https://adrianohenriquedev.github.io/PTScandals/](https://adrianohenriquedev.github.io/PTScandals/)
+> 🌐 **Links de Produção ao Vivo (GitHub Pages):**
+> - 📌 **Página 1 - Dossiê de Escândalos (2003–2024):** [https://adrianohenriquedev.github.io/PTScandals/](https://adrianohenriquedev.github.io/PTScandals/)
+> - 📊 **Página 2 - Gastos & Estatais (Lula 3):** [https://adrianohenriquedev.github.io/PTScandals/gastos-governo.html](https://adrianohenriquedev.github.io/PTScandals/gastos-governo.html)
 
-Painel analítico e interativo contendo o levantamento histórico e documental dos escândalos de corrupção, operações policiais e desvios apurados durante os mandatos presidenciais do Partido dos Trabalhadores (Lula 1, Lula 2, Dilma 1, Dilma 2 e Lula 3).
+Painel analítico e interativo contendo o levantamento histórico e documental dos escândalos de corrupção, operações policiais e desvios apurados durante os mandatos presidenciais do Partido dos Trabalhadores (Lula 1, Lula 2, Dilma 1, Dilma 2 e Lula 3), além do monitoramento em tempo real dos gastos da Presidência e do déficit fiscal das empresas estatais federais no governo atual.
 
 ---
 

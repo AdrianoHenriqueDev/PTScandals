@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gastos do Governo Atual & Déficit das Estatais (Lula 3 / 2023–2024)</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Dashboard interativa com monitoramento de gastos públicos do governo Lula 3 (2023-2024): viagens internacionais, hospedagens em hotéis de luxo, compras para o Palácio da Alvorada e o déficit histórico das empresas estatais federais segundo o Banco Central.">
+  <meta name="keywords" content="gastos governo Lula, déficit estatais 2024, viagens Lula hotel luxo, móveis Alvorada Janja, Correios prejuízo, Banco Central estatais">
+  <meta property="og:title" content="Gastos do Governo Atual & Déficit das Estatais (Lula 3)">
+  <meta property="og:description" content="Dados do Banco Central, Portal da Transparência e reportagens apuradas sobre viagens diplomáticas, itens de luxo e resultado fiscal das estatais.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js para Visualização de Dados -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       CABEÇALHO / NAVBAR COM NAVEGAÇÃO ENTRE PÁGINAS
+       ========================================================================= -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Página Inicial do Dossiê">
+        <div class="brand-icon-wrapper" style="border-color: var(--border-glow-gold); box-shadow: 0 0 15px var(--gold-glow);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill: var(--gold-light);">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>
+            GASTOS & ESTATAIS
+            <span class="brand-badge" style="background: rgba(245, 158, 11, 0.2); color: #fcd34d; border-color: rgba(245, 158, 11, 0.35);">
+              Lula 3 (2023–2024)
+            </span>
+          </h1>
+          <p>Painel de Monitoramento Fiscal, Viagens e Despesas do Executivo</p>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Global Entre Páginas -->
+      <nav class="main-nav" aria-label="Navegação Principal">
+        <a href="index.html" class="nav-tab-link" title="Dossiê Histórico de Escândalos de Corrupção (2003–2024)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          Dossiê de Escândalos (2003–2024)
+        </a>
+        <a href="gastos-governo.html" class="nav-tab-link active" title="Gastos do Governo Atual e Déficit das Estatais">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          Gastos & Estatais (Lula 3)
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary btn-sm" id="btnExportGastosCsv" title="Exportar dados em planilha CSV">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Exportar CSV
+        </button>
+
+        <button class="btn btn-primary btn-sm" id="btnPrintGastosReport" title="Imprimir ou Salvar PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Imprimir / PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO BANNER & KPIS
+       ========================================================================= -->
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-banner" style="background: linear-gradient(135deg, rgba(30, 27, 46, 0.85) 0%, rgba(13, 18, 31, 0.95) 100%);">
+          <div class="hero-header">
+            <div class="hero-pretitle" style="color: var(--gold-light);">
+              <span class="pulse-dot"></span>
+              Monitoramento Fiscal e Transparência Pública (2023–2024)
+            </div>
+            <h2 class="hero-title">
+              Gastos da Presidência, Viagens e <span>Déficit das Estatais</span>
+            </h2>
+            <p class="hero-desc">
+              Painel analítico sobre as contas públicas do governo federal no mandato Lula 3: o déficit histórico das empresas estatais federais divulgado pelo Banco Central, as despesas de viagens e hospedagens em hotéis 5 estrelas no exterior, as aquisições de móveis de alto padrão para a residência oficial e os relatórios fiscais do Tesouro Nacional.
+            </p>
+          </div>
+
+          <!-- Grade de Indicadores Principais (KPIs) -->
+          <div class="kpi-grid">
+            
+            <div class="kpi-card" style="--card-accent: #f87171;">
+              <div class="kpi-top">
+                <span class="kpi-label">Déficit Primário das Estatais (2024)</span>
+                <div class="kpi-icon" style="color: #f87171;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" style="color: #fca5a5;">- R$ 6,73 Bilhões</div>
+              <div class="kpi-meta">
+                <strong>Pior resultado histórico do Banco Central</strong> (Série desde 2002)
+              </div>
+            </div>
+
+            <div class="kpi-card" style="--card-accent: var(--gold);">
+              <div class="kpi-top">
+                <span class="kpi-label">Passagens e Diárias Federais (2023-24)</span>
+                <div class="kpi-icon" style="color: var(--gold);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13"/>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" style="color: #fcd34d;">R$ 4,52 Bilhões</div>
+              <div class="kpi-meta">
+                Deslocamentos de servidores e autoridades no Portal da Transparência
+              </div>
+            </div>
+
+            <div class="kpi-card" style="--card-accent: var(--cyan);">
+              <div class="kpi-top">
+                <span class="kpi-label">Viagens Presidenciais no Exterior</span>
+                <div class="kpi-icon" style="color: var(--cyan);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" style="color: #67e8f9;">R$ 82,5+ Milhões</div>
+              <div class="kpi-meta">
+                Hotéis de luxo, frotas blindadas e comitivas (NY, Londres, Dubai, Pequim)
+              </div>
+            </div>
+
+            <div class="kpi-card" style="--card-accent: var(--purple);">
+              <div class="kpi-top">
+                <span class="kpi-label">Móveis de Luxo & Reformas</span>
+                <div class="kpi-icon" style="color: var(--purple);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="kpi-value" style="color: #c4b5fd;">R$ 2,85 Milhões</div>
+              <div class="kpi-meta">
+                Alvorada, Torto e Meliá (Sofá R$ 65 mil, Cama R$ 42 mil, Hotel R$ 216 mil)
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ANÁLISE VISUAL E GRÁFICOS (CHART.JS)
+         ========================================================================= -->
+    <section class="analytics-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h3 class="section-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--cyan);">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+              Gráficos Fiscais & Demonstrativos de Despesas
+            </h3>
+            <p class="section-subtitle">Evolução dos resultados das empresas estatais e custos diplomáticos</p>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <!-- Gráfico 1: Evolução Histórica Estatais -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Resultado Primário das Estatais Federais</h4>
+                <p class="chart-subtitle">Série do Banco Central (R$ Bilhões, 2018–2024)</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="estataisChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Custos de Viagens Internacionais -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Gastos por Viagem Presidencial (R$ Milhões)</h4>
+                <p class="chart-subtitle">Despesas do Itamaraty com comitivas e hotéis</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="viagensChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 3: Desempenho dos Correios -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Correios: Lucro vs. Prejuízo (2021–2024)</h4>
+                <p class="chart-subtitle">A virada do superávit para o rombo crônico</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="correiosChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TOOLBAR, FILTROS E ABAS TEMÁTICAS
+         ========================================================================= -->
+    <section class="toolbar-section">
+      <div class="container">
+        <div class="toolbar-grid">
+          
+          <div class="toolbar-row-top">
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input 
+                type="text" 
+                id="gastosSearchInput" 
+                placeholder="Buscar por hotel, estatal, cidade, móvel, ministério..." 
+                autocomplete="off"
+              >
+            </div>
+
+            <!-- Abas de Filtro de Seção -->
+            <div class="mandate-chips" id="gastosFilterChips">
+              <button class="chip active" data-type="all">Todos os Registros</button>
+              <button class="chip" data-type="estatais">Déficit das Estatais</button>
+              <button class="chip" data-type="viagens">Viagens & Hotéis de Luxo</button>
+              <button class="chip" data-type="luxos">Móveis de Luxo & Alvorada</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CONTEÚDO DINÂMICO DOS REGISTROS DE GASTOS E ESTATAIS
+         ========================================================================= -->
+    <section class="content-section">
+      <div class="container">
+        <div class="results-count-bar">
+          <span id="gastosResultsCount">Exibindo registros...</span>
+        </div>
+
+        <div class="scandals-grid" id="gastosGrid">
+          <!-- Renderizado dinamicamente via gastos-app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       MODAL DE DETALHES DE GASTO / ESTATAIS
+       ========================================================================= -->
+  <div class="modal-overlay" id="gastosModal" role="dialog" aria-modal="true" aria-labelledby="gastosModalTitle">
+    <div class="modal-container">
+      
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <div class="modal-meta-chips" id="gastosModalBadges"></div>
+          <h2 class="modal-title" id="gastosModalTitle">Título do Registro</h2>
+          <p class="modal-subtitle" id="gastosModalSubtitle">Subtítulo explicativo</p>
+        </div>
+        <button class="modal-close-btn" id="gastosModalCloseBtn" aria-label="Fechar janela">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body" id="gastosModalBody">
+        <!-- Injetado via JS -->
+      </div>
+
+      <div class="modal-footer">
+        <span style="font-size: 0.78rem; color: var(--text-muted);">
+          Dados extraídos de relatórios oficiais do Banco Central, Tesouro Nacional e apurações jornalísticas com direito de resposta.
+        </span>
+        <button class="btn btn-secondary btn-sm" id="gastosModalCloseFooterBtn">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       RODAPÉ INFORMATIVO E METODOLÓGICO
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <h3>Metodologia & Dados Fiscais</h3>
+          <p>
+            Os números consolidados de déficit primário das empresas estatais federais baseiam-se na série histórica mensal do <strong>Banco Central do Brasil</strong> (que computa o setor público não-financeiro e exclui Petrobras e instituições financeiras oficiais).
+          </p>
+          <p style="margin-top: 0.6rem;">
+            As despesas com viagens e bens móveis foram obtidas através de pedidos formulados pela imprensa via <strong>Lei de Acesso à Informação (LAI)</strong> e publicações no Portal da Transparência da Controladoria-Geral da União (CGU).
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Fontes Oficiais & Documentais</h3>
+          <ul class="footer-links">
+            <li><a href="https://www.bcb.gov.br" target="_blank" rel="noopener">Banco Central do Brasil (SGS)</a></li>
+            <li><a href="https://www.tesourotransparente.gov.br" target="_blank" rel="noopener">Tesouro Nacional (Relatório das Estatais)</a></li>
+            <li><a href="https://portaldatransparencia.gov.br" target="_blank" rel="noopener">Portal da Transparência (CGU)</a></li>
+            <li><a href="https://www.poder360.com.br" target="_blank" rel="noopener">Poder360 - Cobertura de Gastos e Estatais</a></li>
+            <li><a href="https://www1.folha.uol.com.br" target="_blank" rel="noopener">Folha de S.Paulo</a></li>
+            <li><a href="https://www.estadao.com.br" target="_blank" rel="noopener">O Estado de S. Paulo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contraponto e Esclarecimentos Oficiais</h3>
+          <p>
+            O Ministério da Gestão e da Inovação em Serviços Públicos (MGI) e a Secretaria de Comunicação Social da Presidência (Secom) argumentam que o déficit primário reflete a elevação dos investimentos das estatais com recursos de caixa acumulados, e que as viagens ao exterior foram vitais para a reinserção diplomática do país no cenário internacional.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>Dossiê de Transparência Pública &copy; 2023–2024. Dados abertos em conformidade com a Lei de Acesso à Informação.</div>
+        <div>Painel analítico mantido para escrutínio público e pesquisa histórica.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toasts -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="gastos-data.js"></script>
+  <script src="gastos-app.js"></script>
+</body>
+</html>
