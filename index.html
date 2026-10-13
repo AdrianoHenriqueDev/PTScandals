@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossiê Interativo: Escândalos de Corrupção nos Governos do PT (2003–2024)</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Dashboard interativa com o levantamento histórico e documental dos escândalos de corrupção, operações policiais e desvios apurados durante os mandatos presidenciais do PT, com dados, valores e fontes verificadas.">
+  <meta name="keywords" content="escândalos PT, corrupção Lula, corrupção Dilma, Lava Jato, Mensalão, Greenfield, dados corrupção Brasil, STF, TCU">
+  <meta property="og:title" content="Dossiê Interativo: Escândalos de Corrupção nos Governos do PT">
+  <meta property="og:description" content="Análise factual com dados, números oficiais do TCU e MPF, cronologia detalhada e links diretos para veículos jornalísticos e decisões judiciais.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js para Visualização de Dados -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       CABEÇALHO / NAVBAR
+       ========================================================================= -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Página Inicial do Dossiê">
+        <div class="brand-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>
+            DOSSIÊ PT (2003–2024)
+            <span class="brand-badge">Base Documental</span>
+          </h1>
+          <p>Painel Analítico de Escândalos, Desvios e Desdobramentos Jurídicos</p>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary btn-sm" id="btnExportCsv" title="Exportar dados filtrados em planilha CSV">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Exportar CSV
+        </button>
+
+        <button class="btn btn-secondary btn-sm" id="btnExportJson" title="Exportar dados em JSON">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          JSON
+        </button>
+
+        <button class="btn btn-primary btn-sm" id="btnPrintReport" title="Gerar visualização para impressão ou salvar PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Imprimir / PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO BANNER & KPIS
+       ========================================================================= -->
+  <main>
+    <section class="hero-section" id="heroSection">
+      <div class="container">
+        <div class="hero-banner">
+          <div class="hero-header">
+            <div class="hero-pretitle">
+              <span class="pulse-dot"></span>
+              Levantamento Histórico e Factual Independente
+            </div>
+            <h2 class="hero-title">
+              Escândalos de Corrupção nos <span>Governos do PT</span>
+            </h2>
+            <p class="hero-desc">
+              Base de dados consolidada contendo investigações policiais, auditorias do Tribunal de Contas da União (TCU), denúncias do Ministério Público Federal e processos no STF desde a posse do 1º mandato de Lula em 2003 até as apurações vigentes em 2024. Cada caso possui valores investigados, impacto patrimonial, situação jurídica e links diretos para veículos jornalísticos de referência.
+            </p>
+          </div>
+
+          <!-- Grade de Indicadores Principais (KPIs) -->
+          <div class="kpi-grid" id="kpiContainer">
+            <!-- Gerado dinamicamente via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ANÁLISE VISUAL E GRÁFICOS INTERATIVOS
+         ========================================================================= -->
+    <section class="analytics-section" id="analyticsSection">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h3 class="section-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+              Visão Geral Analítica
+            </h3>
+            <p class="section-subtitle">Distribuição por mandatos, valores por categoria e desfecho judicial</p>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <!-- Gráfico 1: Mandatos -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Casos por Mandato Presidencial</h4>
+                <p class="chart-subtitle">Frequência de investigações de grande repercussão</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="mandatesChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Categorias e Valores -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Valores por Setor / Categoria</h4>
+                <p class="chart-subtitle">Proporção dos recursos sob investigação (R$)</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="categoriesChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 3: Situação Jurídica -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Status no Poder Judiciário</h4>
+                <p class="chart-subtitle">Condenações, anulações pelo STF e inquéritos</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="statusChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TOOLBAR, FILTROS E PESQUISA EM TEMPO REAL
+         ========================================================================= -->
+    <section class="toolbar-section" id="toolbarSection">
+      <div class="container">
+        <div class="toolbar-grid">
+          
+          <!-- Linha Superior: Pesquisa e Alternância de Visualização -->
+          <div class="toolbar-row-top">
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Buscar por escândalo, político, empresa, delator ou órgão..." 
+                autocomplete="off"
+                aria-label="Campo de busca"
+              >
+              <button class="search-clear" id="searchClearBtn" title="Limpar busca">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="view-modes" role="group" aria-label="Modo de visualização">
+              <button class="view-btn active" id="viewBtnCards" title="Visualização em Cartões">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"/>
+                  <rect x="14" y="3" width="7" height="7"/>
+                  <rect x="14" y="14" width="7" height="7"/>
+                  <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                Cartões
+              </button>
+              
+              <button class="view-btn" id="viewBtnTimeline" title="Visualização em Linha do Tempo Cronológica">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                Linha do Tempo
+              </button>
+
+              <button class="view-btn" id="viewBtnTable" title="Visualização em Tabela Comparativa">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"/>
+                  <line x1="8" y1="12" x2="21" y2="12"/>
+                  <line x1="8" y1="18" x2="21" y2="18"/>
+                  <line x1="3" y1="6" x2="3.01" y2="6"/>
+                  <line x1="3" y1="12" x2="3.01" y2="12"/>
+                  <line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+                Tabela
+              </button>
+            </div>
+          </div>
+
+          <!-- Linha Inferior: Filtros de Mandatos e Seletores -->
+          <div class="toolbar-filters">
+            <div class="mandate-chips" id="mandateChips">
+              <button class="chip active" data-mandate="all">Todos os Mandatos</button>
+              <button class="chip" data-mandate="lula1">Lula 1 (2003-06)</button>
+              <button class="chip" data-mandate="lula2">Lula 2 (2007-10)</button>
+              <button class="chip" data-mandate="dilma1">Dilma 1 (2011-14)</button>
+              <button class="chip" data-mandate="dilma2">Dilma 2 (2015-16)</button>
+              <button class="chip" data-mandate="lula3">Lula 3 (2023-Atual)</button>
+            </div>
+
+            <!-- Filtro de Categoria -->
+            <select class="filter-select" id="categoryFilter" aria-label="Filtrar por Categoria">
+              <option value="all">Todas as Categorias</option>
+              <option value="Petrobras & Estatais">Petrobras & Estatais</option>
+              <option value="Compra de Apoio Político">Compra de Apoio Político</option>
+              <option value="Ministérios & Esplanada">Ministérios & Esplanada</option>
+              <option value="Fundos de Pensão">Fundos de Pensão</option>
+              <option value="Fraudes Fiscais & Orçamento">Fraudes Fiscais & Orçamento</option>
+              <option value="Empréstimos & Obras Externas">Empréstimos & Obras Externas</option>
+            </select>
+
+            <!-- Filtro de Situação Judicial -->
+            <select class="filter-select" id="statusFilter" aria-label="Filtrar por Situação Jurídica">
+              <option value="all">Todos os Status Judiciais</option>
+              <option value="Condenações Mantidas">Condenações Mantidas</option>
+              <option value="Anulado pelo STF">Anulado pelo STF</option>
+              <option value="Em Andamento / Inquérito">Em Andamento / Inquérito</option>
+              <option value="Impeachment / Condenação TCU">Impeachment / Condenação TCU</option>
+              <option value="Acordo de Leniência / Delação">Acordo de Leniência / Delação</option>
+              <option value="Arquivado / Prescrito">Arquivado / Prescrito</option>
+            </select>
+
+            <!-- Ordenação -->
+            <select class="filter-select" id="sortBy" aria-label="Ordenar Resultados">
+              <option value="year-desc">Mais Recentes Primeiro</option>
+              <option value="year-asc">Mais Antigos Primeiro</option>
+              <option value="value-desc">Maior Valor Investigado</option>
+              <option value="recovered-desc">Maior Valor Recuperado</option>
+              <option value="title-asc">Ordem Alfabética (A-Z)</option>
+            </select>
+
+            <button class="btn-reset-filters" id="btnResetFilters">Limpar Filtros</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ÁREA DE EXIBIÇÃO DE DADOS (CARDS, TIMELINE, TABELA)
+         ========================================================================= -->
+    <section class="content-section">
+      <div class="container">
+        
+        <div class="results-count-bar">
+          <span id="resultsCount">Carregando dados...</span>
+          <span id="activeFiltersHint" style="color: var(--text-muted); font-size: 0.76rem;"></span>
+        </div>
+
+        <!-- Vista 1: Grid de Cartões -->
+        <div class="scandals-grid" id="scandalsGrid">
+          <!-- Renderizado via JavaScript -->
+        </div>
+
+        <!-- Vista 2: Linha do Tempo Cronológica -->
+        <div class="timeline-view" id="timelineContainer" style="display: none;">
+          <!-- Renderizado via JavaScript -->
+        </div>
+
+        <!-- Vista 3: Tabela Comparativa -->
+        <div class="table-view-wrap" id="tableContainer" style="display: none;">
+          <table class="custom-table" id="comparisonTable">
+            <thead>
+              <tr>
+                <th data-sort="year">Ano / Mandato</th>
+                <th data-sort="title">Escândalo / Operação</th>
+                <th data-sort="category">Categoria</th>
+                <th data-sort="estimatedValue">Valor Investigado</th>
+                <th data-sort="recoveredValue">Valor Recuperado</th>
+                <th data-sort="judicialStatus">Status Judicial</th>
+                <th>Fontes & Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Linhas geradas via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Estado Vazio / Nenhum Resultado -->
+        <div id="noResultsState" style="display: none; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 1rem; opacity: 0.5;">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+          <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">Nenhum registro encontrado</h4>
+          <p style="font-size: 0.88rem; max-width: 400px; margin: 0 auto 1.2rem auto;">
+            Não encontramos nenhum escândalo correspondente aos termos de pesquisa ou filtros selecionados.
+          </p>
+          <button class="btn btn-secondary btn-sm" onclick="app.resetAllFilters()">Limpar todos os filtros</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       MODAL DE DOSSIÊ COMPLETO E FONTES DIRETAS
+       ========================================================================= -->
+  <div class="modal-overlay" id="dossierModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <div class="modal-meta-chips" id="modalMetaChips">
+            <!-- Badges injetadas via JS -->
+          </div>
+          <h2 class="modal-title" id="modalTitle">Título do Escândalo</h2>
+          <p class="modal-subtitle" id="modalSubtitle">Subtítulo explicativo</p>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar janela de detalhes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body" id="modalBody">
+        
+        <!-- Grade de Métricas do Caso -->
+        <div class="modal-stats-grid">
+          <div class="modal-stat-item">
+            <span class="modal-stat-label">Ano de Eclosão</span>
+            <span class="modal-stat-value" id="modalStatYear">2005</span>
+          </div>
+          <div class="modal-stat-item">
+            <span class="modal-stat-label">Valores Investigados</span>
+            <span class="modal-stat-value" style="color: #fca5a5;" id="modalStatInvestigated">R$ 0,00</span>
+          </div>
+          <div class="modal-stat-item">
+            <span class="modal-stat-label">Valores Recuperados / Pactuados</span>
+            <span class="modal-stat-value" style="color: #34d399;" id="modalStatRecovered">R$ 0,00</span>
+          </div>
+          <div class="modal-stat-item">
+            <span class="modal-stat-label">Órgãos Envolvidos</span>
+            <span class="modal-stat-value" style="font-size: 0.9rem; color: #cbd5e1;" id="modalStatEntities">Petrobras, PF</span>
+          </div>
+        </div>
+
+        <!-- Seção 1: Resumo Executivo -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+            Resumo Histórico do Caso
+          </h4>
+          <p class="modal-text" id="modalSummaryText"></p>
+        </div>
+
+        <!-- Seção 2: Modus Operandi -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+            Modus Operandi (Como Funcionava o Esquema)
+          </h4>
+          <p class="modal-text" id="modalModusText"></p>
+        </div>
+
+        <!-- Seção 3: Principais Figuras Envolvidas -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Principais Figuras Citadas / Investigadas
+          </h4>
+          <div class="scandal-figures-tags" id="modalFiguresTags"></div>
+        </div>
+
+        <!-- Seção 4: Desdobramentos Judiciais & Situação no STF -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v18M3 9l9-6 9 6M3 9l9 6 9-6M3 9v6l9 6 9-6V9"/>
+            </svg>
+            Desdobramentos Judiciais e Situação no STF / Tribunais
+          </h4>
+          <p class="modal-text" id="modalJudicialText"></p>
+        </div>
+
+        <!-- Seção 5: Fontes Verificadas com Links Diretos -->
+        <div class="modal-section">
+          <h4 class="modal-section-title" style="color: var(--cyan);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--cyan);">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+            Fontes Citadas e Redirecionamentos Diretos
+          </h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            Clique nas fontes abaixo para acessar diretamente a cobertura original em veículos de imprensa de credibilidade ou despachos dos órgãos oficiais:
+          </p>
+          <div class="modal-sources-list" id="modalSourcesList">
+            <!-- Injetado via JS -->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <span style="font-size: 0.78rem; color: var(--text-muted);">
+          Dados catalogados com base em registros públicos e processos transitados ou em curso.
+        </span>
+        <button class="btn btn-secondary btn-sm" id="modalCloseFooterBtn">Fechar Dossiê</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       RODAPÉ INFORMATIVO E METODOLÓGICO
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <h3>Metodologia & Transparência</h3>
+          <p>
+            Esta dashboard interativa reúne dados factuais e documentados acerca de operações policiais, inquéritos e condenações judiciais referentes às administrações federais do Partido dos Trabalhadores (Lula 1, Lula 2, Dilma 1, Dilma 2 e Lula 3).
+          </p>
+          <p style="margin-top: 0.6rem;">
+            As informações diferenciam com rigor <em>valores estimados sob investigação</em>, <em>recursos efetivamente ressarcidos ou pactuados em acordos de leniência</em>, e registram os desfechos no Supremo Tribunal Federal (STF), incluindo anulações por incompetência de foro territorial ou parcialidade judiciária.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Fontes Primárias & Imprensa</h3>
+          <ul class="footer-links">
+            <li><a href="https://portal.stf.jus.br" target="_blank" rel="noopener">Supremo Tribunal Federal (STF)</a></li>
+            <li><a href="https://portal.tcu.gov.br" target="_blank" rel="noopener">Tribunal de Contas da União (TCU)</a></li>
+            <li><a href="https://www.mpf.mp.br" target="_blank" rel="noopener">Ministério Público Federal (MPF)</a></li>
+            <li><a href="https://g1.globo.com" target="_blank" rel="noopener">Portal G1 / Grupo Globo</a></li>
+            <li><a href="https://www1.folha.uol.com.br" target="_blank" rel="noopener">Folha de S.Paulo</a></li>
+            <li><a href="https://www.estadao.com.br" target="_blank" rel="noopener">O Estado de S. Paulo</a></li>
+            <li><a href="https://www.bbc.com/portuguese" target="_blank" rel="noopener">BBC News Brasil</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Garantias Constitucionais</h3>
+          <p>
+            Em conformidade com a Constituição Federal de 1988, todos os investigados gozam do princípio da presunção de inocência até o trânsito em julgado. As anulações de processos pelo STF extinguem os efeitos condenatórios, restaurando os direitos políticos nos termos da legislação brasileira.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>Dossiê de Transparência Pública &copy; 2003–2024. Todos os direitos de informação resguardados pela Lei de Acesso à Informação (Lei nº 12.527/2011).</div>
+        <div>Desenvolvido com foco em jornalismo de dados e pesquisa histórica.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Container de Toasts para Feedback -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Carregamento dos Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
