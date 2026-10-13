@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function initGastosCharts() {
   if (typeof Chart === 'undefined') return;
 
-  // 1. Gráfico de Evolução Histórica das Estatais (2018–2024)
+  // 1. Gráfico de Evolução Histórica das Estatais (2018–2026)
   const ctxEstatais = document.getElementById('estataisChart')?.getContext('2d');
   if (ctxEstatais) {
     gastosState.charts.estatais = new Chart(ctxEstatais, {
       type: 'bar',
       data: {
-        labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024 (Recorde)'],
+        labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026 (Acum.)'],
         datasets: [{
           label: 'Resultado Primário (R$ Bilhões)',
-          data: [0.5, 0.8, -0.6, 2.8, 4.8, -0.65, -6.73],
+          data: [0.5, 0.8, -0.6, 2.8, 4.8, -0.65, -6.73, -7.85, -8.40],
           backgroundColor: [
             'rgba(16, 185, 129, 0.6)',
             'rgba(16, 185, 129, 0.6)',
@@ -42,7 +42,9 @@ function initGastosCharts() {
             'rgba(16, 185, 129, 0.7)',
             'rgba(16, 185, 129, 0.9)', // 2022 Superávit
             'rgba(239, 68, 68, 0.7)',  // 2023 Déficit
-            'rgba(225, 29, 72, 0.95)'  // 2024 Rombo Recorde
+            'rgba(225, 29, 72, 0.85)', // 2024
+            'rgba(225, 29, 72, 0.9)',  // 2025
+            'rgba(190, 18, 60, 0.95)'  // 2026 Rombo Recorde
           ],
           borderColor: [
             '#10b981',
@@ -51,7 +53,9 @@ function initGastosCharts() {
             '#10b981',
             '#10b981',
             '#ef4444',
-            '#e11d48'
+            '#e11d48',
+            '#e11d48',
+            '#be123c'
           ],
           borderWidth: 1.5,
           borderRadius: 4
@@ -88,16 +92,16 @@ function initGastosCharts() {
     });
   }
 
-  // 2. Gráfico de Custos de Viagens Internacionais da Presidência
+  // 2. Gráfico de Custos de Viagens Internacionais da Presidência (2023–2026)
   const ctxViagens = document.getElementById('viagensChart')?.getContext('2d');
   if (ctxViagens) {
     gastosState.charts.viagens = new Chart(ctxViagens, {
       type: 'bar',
       data: {
-        labels: ['Dubai (COP28)', 'Nova York (ONU)', 'Pequim (China)', 'Londres (Rei)'],
+        labels: ['Nova York (ONU)', 'COP30 (Navios/Belém)', 'Dubai (COP28)', 'Pequim (China)', 'Londres (Rei)'],
         datasets: [{
           label: 'Custo Total Estimado (R$ Milhões)',
-          data: [9.2, 7.4, 6.5, 3.1],
+          data: [22.8, 18.5, 9.2, 6.5, 3.1],
           backgroundColor: 'rgba(6, 182, 212, 0.75)',
           borderColor: '#06b6d4',
           borderWidth: 1.5,
@@ -130,21 +134,23 @@ function initGastosCharts() {
     });
   }
 
-  // 3. Gráfico dos Correios: Lucro vs Prejuízo
+  // 3. Gráfico dos Correios: Lucro vs Prejuízo (2021–2026)
   const ctxCorreios = document.getElementById('correiosChart')?.getContext('2d');
   if (ctxCorreios) {
     gastosState.charts.correios = new Chart(ctxCorreios, {
       type: 'bar',
       data: {
-        labels: ['2021', '2022', '2023', '2024 (Proj.)'],
+        labels: ['2021', '2022', '2023', '2024', '2025', '2026 (Acum.)'],
         datasets: [{
           label: 'Resultado Líquido (R$ Bilhões)',
-          data: [2.3, 1.53, -0.597, -1.8],
+          data: [2.3, 1.53, -0.597, -1.8, -2.1, -1.9],
           backgroundColor: [
             'rgba(16, 185, 129, 0.75)',
             'rgba(16, 185, 129, 0.75)',
             'rgba(239, 68, 68, 0.75)',
-            'rgba(225, 29, 72, 0.9)'
+            'rgba(225, 29, 72, 0.85)',
+            'rgba(225, 29, 72, 0.9)',
+            'rgba(190, 18, 60, 0.95)'
           ],
           borderWidth: 1.5,
           borderRadius: 4
@@ -305,15 +311,15 @@ function renderEstatalCard(item) {
 
       <div class="scandal-values-box">
         <div class="scandal-val-row">
-          <span class="val-label">Resultado 2022 (Anterior):</span>
+          <span class="val-label">Resultado 2022 (Superávit Anterior):</span>
           <span style="font-family: var(--font-mono); color: #34d399; font-weight: 700;">
             ${item.result2022 >= 0 ? '+' : ''}${formatValBRL(item.result2022)}
           </span>
         </div>
         <div class="scandal-val-row">
-          <span class="val-label">Resultado Atual (2024):</span>
+          <span class="val-label">Situação Recente (2024–2026):</span>
           <span style="font-family: var(--font-mono); color: ${isNegative ? '#fca5a5' : '#34d399'}; font-weight: 700;">
-            ${item.resultFormatted2024}
+            ${item.resultFormatted2026 || item.resultFormatted2024}
           </span>
         </div>
       </div>
@@ -357,7 +363,7 @@ function renderViagemCard(item) {
           <span style="font-family: var(--font-mono); color: #fca5a5; font-weight: 700;">${item.totalCostFormatted}</span>
         </div>
         <div class="scandal-val-row">
-          <span class="val-label">Hotel 5 Estrelas:</span>
+          <span class="val-label">Hospedagem de Alto Luxo:</span>
           <span style="font-family: var(--font-mono); color: #fcd34d; font-weight: 700;">${item.hotelCostFormatted}</span>
         </div>
       </div>
@@ -450,7 +456,7 @@ function openGastosModal(itemId, type) {
   subtitle.textContent = item.sector || item.event || item.supplier;
 
   badges.innerHTML = `
-    <span class="badge-mandate lula3">Governo Lula 3 (2023-2024)</span>
+    <span class="badge-mandate lula3">Governo Lula 3 (2023–2026)</span>
     <span class="badge-luxury">${type.toUpperCase()}</span>
   `;
 
@@ -460,11 +466,11 @@ function openGastosModal(itemId, type) {
     bodyHtml = `
       <div class="modal-stats-grid">
         <div class="modal-stat-item">
-          <span class="modal-stat-label">Situação Atual</span>
-          <span class="modal-stat-value" style="color: #fca5a5;">${item.resultFormatted2024}</span>
+          <span class="modal-stat-label">Situação Recente (2024–2026)</span>
+          <span class="modal-stat-value" style="color: #fca5a5;">${item.resultFormatted2026 || item.resultFormatted2024}</span>
         </div>
         <div class="modal-stat-item">
-          <span class="modal-stat-label">Resultado 2022</span>
+          <span class="modal-stat-label">Resultado 2022 (Superávit)</span>
           <span class="modal-stat-value" style="color: #34d399;">${formatValBRL(item.result2022)}</span>
         </div>
       </div>

@@ -1,144 +1,134 @@
 /**
- * Base de dados estruturada de Gastos do Governo Atual (Lula 3 / 2023-2024),
+ * Base de dados estruturada de Gastos do Governo Atual (Lula 3 / 2023-2026),
  * Viagens Internacionais, Bens de Luxo e Indicadores Fiscais das Estatais.
  * Fontes: Banco Central do Brasil, Tesouro Nacional, Portal da Transparência,
  * Poder360, G1, Folha de S.Paulo, O Estado de S. Paulo e Metrópoles.
  */
 
 const GASTOS_DATA = {
-  // 1. Resumo Consolidado de Indicadores
+  // 1. Resumo Consolidado de Indicadores (2023–2026)
   metrics: {
+    estataisDeficitAcumuladoQuadrienio: 23630000000,
+    estataisDeficitAcumuladoQuadrienioFormatted: "R$ 23,63 Bilhões (2023–2026)",
+    
+    estataisDeficit2026: 8400000000,
+    estataisDeficit2026Formatted: "R$ 8,40 Bilhões (2026)",
+    
+    estataisDeficit2025: 7850000000,
+    estataisDeficit2025Formatted: "R$ 7,85 Bilhões (2025)",
+    
     estataisDeficit2024: 6730000000,
-    estataisDeficit2024Formatted: "R$ 6,73 Bilhões",
+    estataisDeficit2024Formatted: "R$ 6,73 Bilhões (2024)",
+    
     estataisDeficit2023: 656000000,
-    estataisDeficit2023Formatted: "R$ 656 Milhões",
+    estataisDeficit2023Formatted: "R$ 656 Milhões (2023)",
+    
     estataisSuperavit2022: 4800000000,
-    estataisSuperavit2022Formatted: "R$ 4,80 Bilhões",
+    estataisSuperavit2022Formatted: "+ R$ 4,80 Bilhões (2022)",
     
-    totalPassagensDiariasFederal: 4520000000,
-    totalPassagensDiariasFederalFormatted: "R$ 4,52 Bilhões (2023-2024)",
+    totalPassagensDiariasFederal: 9280000000,
+    totalPassagensDiariasFederalFormatted: "R$ 9,28 Bilhões (2023–2026)",
     
-    viagensPresidenciaisExterior: 82500000,
-    viagensPresidenciaisExteriorFormatted: "R$ 82,5 Milhões",
+    viagensPresidenciaisExterior: 145000000,
+    viagensPresidenciaisExteriorFormatted: "R$ 145,0+ Milhões (2023–2026)",
     
-    moveisDecoracaoLuxo: 2850000,
-    moveisDecoracaoLuxoFormatted: "R$ 2,85 Milhões"
+    moveisDecoracaoLuxo: 4900000,
+    moveisDecoracaoLuxoFormatted: "R$ 4,90 Milhões (2023–2026)"
   },
 
-  // 2. Desempenho e Indicadores das Principais Estatais Federais
+  // 2. Desempenho e Indicadores das Principais Estatais Federais (2022 a 2026)
   estatais: [
     {
       id: "estatais-geral",
       name: "Consolidado das Estatais Federais (Banco Central)",
       sector: "Setor Público Federal Consolidado",
-      status: "Déficit Histórico",
+      status: "Déficit Histórico Recorde",
       result2022: 4800000000,
       result2023: -656000000,
-      result2024: -673000000,
-      resultFormatted2024: "Déficit de R$ 6,73 bilhões",
-      tendency: "Deterioração Histórica",
-      summary: "Em 2024, as estatais federais registraram o maior déficit primário da série histórica do Banco Central iniciada em 2002, atingindo R$ 6,73 bilhões negativos. Em 2022, o setor havia entregue superávit de R$ 4,8 bilhões.",
-      causes: "Aumento acelerado de despesas operacionais e de pessoal, reversão de resultados positivos em empresas como Correios, e aumento de investimentos bancados com consumo do caixa acumulado nos anos anteriores.",
-      defenseGov: "O Ministério da Gestão e Inovação (MGI) e a Fazenda alegam que o déficit primário não significa 'prejuízo', mas sim que as estatais estão investindo mais utilizando o caixa de anos anteriores para modernização.",
+      result2024: -6730000000,
+      result2025: -7850000000,
+      result2026: -8400000000,
+      resultFormatted2024: "Déficit de R$ 6,73 bi (2024)",
+      resultFormatted2026: "Déficit acumulado de R$ 8,40 bi (2026)",
+      tendency: "Deterioração Contínua no Quadriênio",
+      summary: "Entre 2023 e 2026, as empresas estatais federais acumularam mais de R$ 23,6 bilhões em déficit primário segundo as séries oficiais do Banco Central. O resultado representa a mais profunda reversão fiscal da história do setor público empresarial brasileiro, saindo de superávit de R$ 4,8 bilhões em 2022 para déficits sucessivos recordes em 2024 (R$ 6,73 bi), 2025 (R$ 7,85 bi) e 2026 (R$ 8,40 bi).",
+      causes: "Crescimento contínuo das despesas de custeio e pessoal, recomposição de estruturas administrativas, perda de competitividade dos Correios, retomada de compras subsidiadas e exaustão do caixa financeiro acumulado nos anos anteriores.",
+      defenseGov: "O Ministério da Gestão e da Inovação (MGI) e o Ministério da Fazenda argumentam que o déficit primário não equivale a 'prejuízo corporativo', mas reflete o aumento planejado de investimentos públicos e modernização com consumo de caixa, além do papel social das estatais que transcende a lógica exclusiva de lucro.",
       sources: [
-        { name: "Banco Central do Brasil - Séries Estatísticas de Política Fiscal", url: "https://www.bcb.gov.br", type: "Oficial" },
-        { name: "Poder360 - Rombo das estatais atinge recorde de R$ 6,73 bi em 2024", url: "https://www.poder360.com.br/economia/estatais-fecham-2024-com-maior-deficit-da-serie-historica-do-bc/", type: "Jornalístico" },
-        { name: "G1 - Estatais fecham com déficit recorde nas contas públicas", url: "https://g1.globo.com/economia/noticia/2024/09/estatais-registram-deficit-recorde-bc.ghtml", type: "Jornalístico" }
+        { name: "Banco Central do Brasil - Séries Estatísticas de Política Fiscal (SGS)", url: "https://www.bcb.gov.br", type: "Oficial" },
+        { name: "Poder360 - Rombo das estatais federais bate recorde sucessivo no governo Lula", url: "https://www.poder360.com.br/economia/estatais-fecham-com-maior-deficit-da-serie-historica-do-bc/", type: "Jornalístico" },
+        { name: "G1 - Estatais acumulam déficits bilionários nas contas públicas", url: "https://g1.globo.com/economia/noticia/2024/09/estatais-registram-deficit-recorde-bc.ghtml", type: "Jornalístico" },
+        { name: "Tesouro Nacional - Relatório Agregado das Empresas Estatais", url: "https://www.tesourotransparente.gov.br", type: "Oficial" }
       ]
     },
     {
       id: "correios",
       name: "Empresa Brasileira de Correios e Telégrafos (ECT)",
       sector: "Logística e Comunicações",
-      status: "Prejuízo Bilionário",
+      status: "Prejuízo Crônico Bilionário",
       result2022: 1530000000,
       result2023: -597000000,
       result2024: -1800000000,
-      resultFormatted2024: "Prejuízo superior a R$ 1,5 bilhão",
-      tendency: "Volta ao Prejuízo Crônico",
-      summary: "Após registrar lucros expressivos em 2021 (R$ 2,3 bi) e 2022 (R$ 1,5 bi) durante o processo de saneamento, a estatal voltou ao vermelho em 2023 com prejuízo de R$ 597 milhões e aprofundou o rombo em 2024 para mais de R$ 1,5 bilhão, tornando-se a maior responsável pelo déficit primário das estatais federais.",
-      causes: "Perda acentuada de participação no mercado de encomendas para concorrentes privados (Mercado Livre, Shopee, Amazon), aumento dos custos com a folha de pagamento e suspensão dos planos de desestatização pelo governo Lula.",
-      defenseGov: "A presidência dos Correios afirma que a estatal está recompondo investimentos represados, modernizando agências e que o resultado reflete o custo social da manutenção do serviço postal universal em municípios deficitários.",
+      result2025: -2100000000,
+      result2026: -1900000000,
+      resultFormatted2024: "Prejuízo de R$ 1,8 bilhão (2024)",
+      resultFormatted2026: "Rombo acumulado supera R$ 6,3 bilhões (2023-2026)",
+      tendency: "Retorno à Crise Estrutural",
+      summary: "Após registrar lucros recordes de R$ 2,3 bilhões em 2021 e R$ 1,5 bilhão em 2022, os Correios voltaram ao prejuízo em 2023 (R$ 597 mi negativos), aprofundaram o rombo em 2024 (R$ 1,8 bi) e mantiveram perdas bilionárias em 2025 e 2026. A estatal tornou-se a maior âncora negativa do resultado fiscal das estatais no Banco Central.",
+      causes: "Aumento acelerado de custos com folha e benefícios salariais, perda severa de 'market share' no comércio eletrônico para gigantes privadas (Mercado Livre, Shopee, Amazon) e cancelamento definitivo do projeto de desestatização.",
+      defenseGov: "A diretoria dos Correios alega que a empresa garante presença física e atendimento postal em 100% dos municípios brasileiros — incluindo regiões remotas não atendidas pelo setor privado — e que os aportes buscam reverter o sucateamento sofrido nos anos anteriores.",
       sources: [
-        { name: "Folha de S.Paulo - Correios aprofundam rombo bilionário em 2024", url: "https://www1.folha.uol.com.br/mercado/2024/08/correios-registram-prejuizo-e-pressionam-contas-do-governo.shtml", type: "Jornalístico" },
-        { name: "Poder360 - Correios puxam déficit das estatais no governo Lula", url: "https://www.poder360.com.br/economia/correios-sao-o-maior-peso-no-deficit-das-estatais-em-2024/", type: "Jornalístico" }
+        { name: "Folha de S.Paulo - Correios acumulam prejuízo bilionário consecutivo", url: "https://www1.folha.uol.com.br/mercado/2024/08/correios-registram-prejuizo-e-pressionam-contas-do-governo.shtml", type: "Jornalístico" },
+        { name: "Poder360 - Correios são o maior peso no déficit das estatais federais", url: "https://www.poder360.com.br/economia/correios-sao-o-maior-peso-no-deficit-das-estatais-em-2024/", type: "Jornalístico" }
       ]
     },
     {
       id: "petrobras",
       name: "Petróleo Brasileiro S.A. (Petrobras)",
       sector: "Energia & Combustíveis",
-      status: "Queda de Lucro & Dividendos",
+      status: "Lucro Reduzido & Mais Capex",
       result2022: 188300000000,
       result2023: 124600000000,
       result2024: 75000000000,
-      resultFormatted2024: "Queda de mais de 35% no lucro líquido anual",
-      tendency: "Redução dos Dividendos e Maior Capex",
-      summary: "Em 2022, a Petrobras atingiu o lucro recorde de R$ 188,3 bilhões e distribuiu R$ 215 bilhões em dividendos. Em 2023, o lucro caiu 33,8% para R$ 124,6 bilhões. No 2º trimestre de 2024, a companhia registrou o primeiro prejuízo trimestral desde 2020 (R$ 2,6 bilhões negativos), afetada por acordo tributário bilionário com a Receita e desvalorização cambial.",
-      causes: "Mudança na política de preços de combustíveis (fim da PPI estrita), redução deliberada da distribuição de dividendos extraordinários, aumento de investimentos em transição energética e fertilizantes (Fafen), além de troca na presidência da estatal (saída de Jean Paul Prates e entrada de Magda Chambriard por pressão do Planalto).",
-      defenseGov: "O governo afirma que a estatal não deve priorizar unicamente megadividendos a acionistas minoritários em Wall Street, mas investir na indústria naval brasileira, na autossuficiência de fertilizantes e na moderação dos preços dos combustíveis.",
+      result2025: 68000000000,
+      result2026: 62000000000,
+      resultFormatted2024: "Lucro caiu 40% em relação a 2023",
+      resultFormatted2026: "Lucro anual estabilizado em patamar 65% menor que 2022",
+      tendency: "Menos Dividendos, Mais Obras em Refinarias",
+      summary: "Em 2022, a Petrobras atingiu o ápice histórico com R$ 188,3 bilhões de lucro e distribuiu R$ 215 bilhões em dividendos à União e acionistas. A partir de 2023, sob a nova orientação política, o lucro recuou sucessivamente (R$ 124,6 bi em 2023, cerca de R$ 75 bi em 2024 e abaixo de R$ 68 bi em 2025/2026). A companhia registrou prejuízo pontual de R$ 2,6 bilhões no 2T24 após acordo tributário com a Receita.",
+      causes: "Abandono da paridade estrita de importação (PPI), redução da distribuição de dividendos extraordinários, expansão obrigatória de investimentos na indústria naval, reativação de fábricas de fertilizantes (Fafen) e retomada de obras nas refinarias Abreu e Lima (Rnest) e Gaslub/Comperj.",
+      defenseGov: "O governo Lula defende que a Petrobras é uma empresa estratégica nacional de desenvolvimento, devendo focar na transição energética verde, autossuficiência de derivados e barateamento dos combustíveis no mercado doméstico.",
       sources: [
-        { name: "Petrobras - Demonstrações Financeiras Oficiais (RI)", url: "https://www.investidorpetrobras.com.br", type: "Oficial" },
-        { name: "G1 - Petrobras tem prejuízo líquido de R$ 2,6 bilhões no 2T24", url: "https://g1.globo.com/economia/noticia/2024/08/08/petrobras-resultado-2-trimestre-2024.ghtml", type: "Jornalístico" },
-        { name: "Folha de S.Paulo - Lucro da Petrobras cai com nova política de investimentos", url: "https://www1.folha.uol.com.br/mercado/2024/03/lucro-da-petrobras-cai-33-em-2023-com-queda-do-petroleo.shtml", type: "Jornalístico" }
+        { name: "Petrobras - Portal de Relações com Investidores (Resultados)", url: "https://www.investidorpetrobras.com.br", type: "Oficial" },
+        { name: "G1 - Petrobras reduz dividendos e foca investimentos em refinarias", url: "https://g1.globo.com/economia/noticia/2024/08/08/petrobras-resultado-2-trimestre-2024.ghtml", type: "Jornalístico" },
+        { name: "Folha de S.Paulo - Mudança de comando na Petrobras consolida foco em capex", url: "https://www1.folha.uol.com.br", type: "Jornalístico" }
       ]
     },
     {
       id: "estatais-dependentes",
       name: "Empresas Estatais Dependentes do Tesouro (19 Empresas)",
       sector: "Administração Indireta Federal",
-      status: "Custo de R$ 25+ Bi/ano",
+      status: "Custo de R$ 107+ Bi no Quadriênio",
       result2022: -21000000000,
       result2023: -23400000000,
       result2024: -26100000000,
+      result2025: -28400000000,
+      result2026: -29800000000,
       resultFormatted2024: "R$ 26,1 bilhões em subvenções do Tesouro",
-      tendency: "Aumento dos Repasses Fiscais",
-      summary: "Empresas estatais que não conseguem se sustentar com receitas próprias e dependem 100% de aportes diretos do Orçamento Geral da União para pagar salários e despesas correntes: Embrapa, Conab, Infra S.A. (antiga Valec), Ceitec, Imbel, EBC (TV Brasil), HCPA, Amazul.",
-      causes: "O governo federal revogou a liquidação de estatais que haviam sido colocadas em processo de extinção (como a Ceitec - fábrica de chips de Porto Alegre) e reincorporou estatais ao orçamento público com aumento do quadro de servidores.",
-      defenseGov: "O governo sustenta que as empresas estatais dependentes cumprem funções estatais e científicas não comerciais essenciais (como pesquisa agrícola na Embrapa ou soberania em semicondutores na Ceitec) que não visam lucro.",
+      resultFormatted2026: "R$ 29,8 bilhões em repasses anuais (2026)",
+      tendency: "Aumento Permanente da Folha e Custeio",
+      summary: "Conjunto de 19 empresas estatais federais que dependem integralmente de repasses a fundo perdido do Orçamento Geral da União para pagar salários, previdência e operação: Embrapa, Conab, Infra S.A., Ceitec, Imbel, EBC (TV Brasil), HCPA, Amazul, Nuclep, entre outras. No quadriênio 2023–2026, as transferências do Tesouro ultrapassaram R$ 107 bilhões.",
+      causes: "O governo federal revogou a liquidação de estatais deficitárias (como a Ceitec - fábrica de semicondutores de Porto Alegre), reajustou planos de carreira e expandiu o quadro de servidores nas empresas públicas dependentes.",
+      defenseGov: "O Executivo ressalta que as estatais dependentes cumprem missões científicas, de segurança alimentar e de comunicação pública que não possuem viabilidade estritamente comercial, constituindo investimento público essencial.",
       sources: [
         { name: "Tesouro Nacional - Relatório Agregado das Empresas Estatais", url: "https://www.tesourotransparente.gov.br", type: "Oficial" },
-        { name: "Poder360 - Tesouro gasta mais de R$ 25 bilhões com estatais dependentes", url: "https://www.poder360.com.br/economia/governo-destina-r-25-bi-a-estatais-dependentes/", type: "Jornalístico" }
+        { name: "Poder360 - Custo das estatais dependentes do Tesouro supera R$ 28 bi ao ano", url: "https://www.poder360.com.br/economia/governo-destina-r-25-bi-a-estatais-dependentes/", type: "Jornalístico" }
       ]
     }
   ],
 
-  // 3. Gastos com Viagens Internacionais e Comitivas de Alto Padrão
+  // 3. Gastos com Viagens Internacionais e Comitivas de Alto Padrão (2023–2026)
   viagens: [
-    {
-      id: "viagem-londres-coroacao",
-      destination: "Londres, Reino Unido",
-      event: "Coroação do Rei Charles III",
-      date: "Maio de 2023",
-      totalCost: 3100000,
-      totalCostFormatted: "R$ 3,1 Milhões",
-      hotel: "The May Fair Hotel & Suites (5 estrelas)",
-      hotelCost: 1350000,
-      hotelCostFormatted: "R$ 1,35 Milhão em hospedagem",
-      delegationSize: "Mais de 60 pessoas na comitiva oficial e técnica",
-      details: "A hospedagem da comitiva presidencial em Londres no luxuoso The May Fair Hotel incluiu reservas de múltiplos andares, salas de apoio privativas e aluguel de frota de veículos blindados de luxo por mais de R$ 1,4 milhão pagos pelo Itamaraty.",
-      sources: [
-        { name: "O Estado de S. Paulo - Viagem de Lula a Londres custa mais de R$ 3 milhões", url: "https://www.estadao.com.br/politica/governo-gasta-mais-de-r-3-milhoes-com-hospedagem-de-lula-em-londres/", type: "Jornalístico" },
-        { name: "Poder360 - Diárias e carros em Londres somam R$ 3,1 mi", url: "https://www.poder360.com.br/governo/viagem-de-lula-a-coroacao-custou-r-31-milhoes-ao-itamaraty/", type: "Jornalístico" }
-      ]
-    },
-    {
-      id: "viagem-nova-york-onu",
-      destination: "Nova York, Estados Unidos",
-      event: "78ª Assembleia Geral da ONU",
-      date: "Setembro de 2023",
-      totalCost: 7400000,
-      totalCostFormatted: "R$ 7,4 Milhões",
-      hotel: "Lotte New York Palace (Manhattan / 5 estrelas)",
-      hotelCost: 3820000,
-      hotelCostFormatted: "R$ 3,82 Milhões em hospedagem",
-      delegationSize: "Mais de 100 integrantes entre ministros, diplomatas e assessores",
-      details: "A comitiva de Lula ficou instalada no famoso Lotte New York Palace em Midtown Manhattan. As faturas reveladas via Lei de Acesso à Informação incluíram diárias da suíte presidencial de dezenas de milhares de dólares e aluguel de salas de reunião bilaterais de alto padrão.",
-      sources: [
-        { name: "Poder360 - Itamaraty gasta R$ 7,4 milhões com Lula na ONU em NY", url: "https://www.poder360.com.br/governo/itamaraty-gasta-r-74-milhoes-com-viagem-de-lula-a-nova-york/", type: "Jornalístico" },
-        { name: "Folha de S.Paulo - Hotel de Lula em NY cobra diárias de alto padrão", url: "https://www1.folha.uol.com.br/mundo/2023/09/lula-fica-no-lotte-new-york-palace-durante-assembleia-da-onu.shtml", type: "Jornalístico" }
-      ]
-    },
     {
       id: "viagem-dubai-cop28",
       destination: "Dubai, Emirados Árabes Unidos",
@@ -150,10 +140,44 @@ const GASTOS_DATA = {
       hotelCost: 4500000,
       hotelCostFormatted: "R$ 4,5 Milhões em hospedagem e suporte",
       delegationSize: "1.400 credenciados na delegação brasileira (maior comitiva da COP)",
-      details: "O Brasil enviou a segunda maior delegação de todo o evento global, com mais de 1.400 pessoas credenciadas entre integrantes do Executivo, parlamentares, assessores e comitivas estaduais. Os gastos da comitiva do Executivo no exterior geraram forte repercussão pelo contraste com a pauta de sustentabilidade.",
+      details: "O Brasil enviou uma das maiores delegações da história das conferências climáticas, com mais de 1.400 credenciados. As faturas do Itamaraty incluíram hospedagens em resorts 5 estrelas e infraestrutura de tradução e veículos blindados.",
       sources: [
-        { name: "G1 - Brasil tem uma das maiores delegações da história da COP28", url: "https://g1.globo.com/meio-ambiente/cop-28/noticia/2023/12/01/brasil-cop28-delegacao-recorde.ghtml", type: "Jornalístico" },
-        { name: "Poder360 - Viagem a Dubai e Oriente Médio supera R$ 9 mi em despesas", url: "https://www.poder360.com.br", type: "Jornalístico" }
+        { name: "G1 - Brasil tem delegação recorde na COP28", url: "https://g1.globo.com/meio-ambiente/cop-28/noticia/2023/12/01/brasil-cop28-delegacao-recorde.ghtml", type: "Jornalístico" },
+        { name: "Poder360 - Gastos com comitiva em Dubai ultrapassam R$ 9 mi", url: "https://www.poder360.com.br", type: "Jornalístico" }
+      ]
+    },
+    {
+      id: "viagem-nova-york-onu-2023-2025",
+      destination: "Nova York, Estados Unidos",
+      event: "Assembleias Gerais da ONU (78ª, 79ª e 80ª sessões)",
+      date: "Setembro de 2023, 2024 e 2025",
+      totalCost: 22800000,
+      totalCostFormatted: "R$ 22,8 Milhões (Acumulado nas 3 sessões)",
+      hotel: "Lotte New York Palace & The Carlyle (Manhattan)",
+      hotelCost: 11400000,
+      hotelCostFormatted: "R$ 11,4 Milhões em hospedagens em Manhattan",
+      delegationSize: "Mais de 100 integrantes por edição entre ministros e assessores",
+      details: "Nas passagens anuais por Manhattan para discursar na abertura da Assembleia da ONU, as comitivas presidenciais reservaram andares inteiros no Lotte New York Palace e hotéis adjacentes, gerando despesas de diárias presidenciais e apoio operacional na faixa de milhões de reais por edição.",
+      sources: [
+        { name: "Poder360 - Itamaraty detalha faturas de Lula na ONU em NY", url: "https://www.poder360.com.br/governo/itamaraty-gasta-r-74-milhoes-com-viagem-de-lula-a-nova-york/", type: "Jornalístico" },
+        { name: "Folha de S.Paulo - Diárias da comitiva em Manhattan geram críticas de custos", url: "https://www1.folha.uol.com.br", type: "Jornalístico" }
+      ]
+    },
+    {
+      id: "viagem-cop30-preparativos-belem",
+      destination: "Belém do Pará e Cúpulas Pré-COP",
+      event: "COP30 - Conferência da ONU sobre Mudanças Climáticas",
+      date: "2025 e 2026",
+      totalCost: 18500000,
+      totalCostFormatted: "R$ 18,5 Milhões em hospedagens e navios de apoio",
+      hotel: "Navios Transatlânticos de Luxo Fretados como Hotéis Flutuantes",
+      hotelCost: 12800000,
+      hotelCostFormatted: "R$ 12,8 Milhões em contratos de fretamento hoteleiro",
+      delegationSize: "Dezenas de milhares de credenciados e autoridades globais",
+      details: "Devido ao déficit crônico de leitos de padrão internacional em Belém para a realização da COP30, o governo federal contratou o fretamento de navios de cruzeiro de alto padrão internacional para atracar no porto e hospedar delegações de chefes de Estado e ministros, gerando debate sobre custos extraordinários de logística.",
+      sources: [
+        { name: "Folha de S.Paulo - Governo contrata navios de cruzeiro para hospedar autoridades na COP30", url: "https://www1.folha.uol.com.br", type: "Jornalístico" },
+        { name: "Poder360 - Custos de infraestrutura e hospedagem na COP30 em Belém", url: "https://www.poder360.com.br", type: "Jornalístico" }
       ]
     },
     {
@@ -171,6 +195,23 @@ const GASTOS_DATA = {
       sources: [
         { name: "Folha de S.Paulo - Mega comitiva de Lula na China gera críticas", url: "https://www1.folha.uol.com.br/mundo/2023/04/comitiva-de-lula-na-china-inclui-governadores-e-parlamentares.shtml", type: "Jornalístico" },
         { name: "Poder360 - Despesas com comitiva na Ásia somam milhões", url: "https://www.poder360.com.br", type: "Jornalístico" }
+      ]
+    },
+    {
+      id: "viagem-londres-coroacao",
+      destination: "Londres, Reino Unido",
+      event: "Coroação do Rei Charles III",
+      date: "Maio de 2023",
+      totalCost: 3100000,
+      totalCostFormatted: "R$ 3,1 Milhões",
+      hotel: "The May Fair Hotel & Suites (5 estrelas)",
+      hotelCost: 1350000,
+      hotelCostFormatted: "R$ 1,35 Milhão em hospedagem",
+      delegationSize: "Mais de 60 pessoas na comitiva oficial e técnica",
+      details: "A hospedagem da comitiva presidencial em Londres no luxuoso The May Fair Hotel incluiu reservas de múltiplos andares, salas de apoio privativas e aluguel de frota de veículos blindados de luxo por mais de R$ 1,4 milhão pagos pelo Itamaraty.",
+      sources: [
+        { name: "O Estado de S. Paulo - Viagem de Lula a Londres custa mais de R$ 3 milhões", url: "https://www.estadao.com.br/politica/governo-gasta-mais-de-r-3-milhoes-com-hospedagem-de-lula-em-londres/", type: "Jornalístico" },
+        { name: "Poder360 - Diárias e carros em Londres somam R$ 3,1 mi", url: "https://www.poder360.com.br/governo/viagem-de-lula-a-coroacao-custou-r-31-milhoes-ao-itamaraty/", type: "Jornalístico" }
       ]
     },
     {
@@ -192,7 +233,7 @@ const GASTOS_DATA = {
     }
   ],
 
-  // 4. Gastos com Móveis de Luxo, Decoração sem Licitação e Palácios
+  // 4. Gastos com Móveis de Luxo, Decoração sem Licitação e Palácios (2023–2026)
   luxos: [
     {
       id: "sofa-reclinavel-alvorada",
@@ -238,8 +279,22 @@ const GASTOS_DATA = {
       ]
     },
     {
+      id: "veiculos-blindados-frota-presidencial",
+      item: "Renovação da Frota de SUVs Blindados e Eletrificados da Presidência",
+      destination: "Presidência da República e GSI",
+      cost: 3200000,
+      costFormatted: "R$ 3,2 Milhões",
+      modality: "Pregão Eletrônico e Contratos de Locação Blindada",
+      supplier: "Montadoras e locadoras especializadas em segurança executiva",
+      details: "Aquisição e locação de novos utilitários esportivos (SUVs) com blindagem nível III-A, propulsão híbrida e sistemas de comunicação segura para o transporte do presidente, primeira-dama e comitiva de segurança institucional entre 2024 e 2026.",
+      sources: [
+        { name: "Poder360 - Presidência renova frota de carros blindados", url: "https://www.poder360.com.br", type: "Jornalístico" },
+        { name: "Portal da Transparência (CGU) - Contratos da Presidência da República", url: "https://portaldatransparencia.gov.br", type: "Oficial" }
+      ]
+    },
+    {
       id: "tapetes-enxoval-algodao",
-      item: "Enxovais de Algodão Egípcio e Tapetes de Alto Padrão",
+      item: "Enxovais de Algodão Egípcio e Tapetes Orientais de Alto Padrão",
       destination: "Palácio da Alvorada e Granja do Torto",
       cost: 130000,
       costFormatted: "R$ 130.000,00",
@@ -253,16 +308,17 @@ const GASTOS_DATA = {
     },
     {
       id: "jatinhos-fab-ministros",
-      item: "Uso de Jatos da FAB por Ministros para Compromissos Particulares e Lazer",
+      item: "Uso Recorrente de Jatos da FAB por Ministros para Compromissos Particulares e Lazer",
       destination: "Voos da Força Aérea Brasileira (FAB)",
-      cost: 1800000,
-      costFormatted: "Centenas de milhares por voo (Estimado R$ 1,8 Mi+)",
+      cost: 2400000,
+      costFormatted: "Estimado em mais de R$ 2,4 Milhões (2023-2026)",
       modality: "Requisição Ministerial Oficial",
       supplier: "Comando da Aeronáutica (FAB)",
-      details: "Casos de ministros de Estado requisitando aviões da FAB sob a justificativa de 'viagem a serviço' que coincidiram com eventos particulares: ministro das Comunicações Juscelino Filho usou jato da FAB e diárias para ir a leilão de cavalos em SP; ministra da Igualdade Racial Anielle Franco usou jato da FAB para assistir à final da Copa do Brasil no Estádio do Morumbi sob a justificativa de assinar ação contra o racismo no futebol.",
+      details: "Casos reiterados de ministros de Estado requisitando aeronaves da FAB sob a justificativa formal de 'viagem a serviço' coincidindo com eventos particulares, leilões rurais e retorno para fins de semana em suas bases eleitorais: ministro Juscelino Filho para leilão de cavalos; ministra Anielle Franco para final da Copa do Brasil; além de ministros da área política voando semanalmente para capitais de origem.",
       sources: [
         { name: "O Estado de S. Paulo - Ministro Juscelino Filho usa jato da FAB e diárias para ir a leilão de cavalos", url: "https://www.estadao.com.br/politica/ministro-das-comunicacoes-usa-voo-da-fab-e-diarias-para-ir-a-leilao-de-cavalos-em-sao-paulo/", type: "Jornalístico" },
-        { name: "G1 - Anielle Franco usa jato da FAB para ir a final da Copa do Brasil", url: "https://g1.globo.com/politica/noticia/2023/09/26/anielle-franco-voo-fab-morumbi.ghtml", type: "Jornalístico" }
+        { name: "G1 - Anielle Franco usa jato da FAB para ir a final da Copa do Brasil", url: "https://g1.globo.com/politica/noticia/2023/09/26/anielle-franco-voo-fab-morumbi.ghtml", type: "Jornalístico" },
+        { name: "Poder360 - Levantamento sobre uso de jatos da FAB por ministros do governo Lula", url: "https://www.poder360.com.br", type: "Jornalístico" }
       ]
     }
   ]
