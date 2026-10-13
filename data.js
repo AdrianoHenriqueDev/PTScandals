@@ -26,9 +26,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Enquanto presidia a Loterj e depois articulava politicamente na Casa Civil, Waldomiro intermediava interesses de empresários de jogos de azar e bicheiros em licitações públicas federais e estaduais, exigindo repasses periódicos e contribuições não declaradas para campanhas políticas.",
     judicialDetails: "Waldomiro Diniz foi exonerado sumariamente após a divulgação do vídeo pela revista Época em fevereiro de 2004. Foi processado e condenado pela Justiça do DF e pelo TJ-DF a 12 anos de prisão por corrupção passiva e estelionato. José Dirceu prestou depoimentos na CPI dos Bingos e na PF, negando conhecimento prévio da extorsão.",
     sources: [
-      { name: "G1 - Memória: Caso Waldomiro Diniz", url: "https://g1.globo.com/politica/noticia/2012/03/stj-mantem-condenacao-de-waldomiro-diniz-por-corrupcao.html", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Caso Waldomiro Diniz completa histórico", url: "https://www1.folha.uol.com.br/fsp/brasil/fc1402200402.htm", type: "Jornalístico" },
-      { name: "Superior Tribunal de Justiça (STJ) - Decisão", url: "https://www.stj.jus.br", type: "Oficial/Judicial" }
+      { name: "G1 - Memória: Caso Waldomiro Diniz", url: "https://www.google.com/search?q=G1%20-%20Mem%C3%B3ria%3A%20Caso%20Waldomiro%20Diniz", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Caso Waldomiro Diniz completa histórico", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Caso%20Waldomiro%20Diniz%20completa%20hist%C3%B3rico", type: "Jornalístico" },
+      { name: "Superior Tribunal de Justiça (STJ) - Decisão", url: "https://www.google.com/search?q=Superior%20Tribunal%20de%20Justi%C3%A7a%20(STJ)%20-%20Decis%C3%A3o", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -50,9 +50,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Funcionários da Coordenação-Geral de Recursos Materiais do Ministério da Saúde combinavam previamente resultados de pregões internacionais com lobistas e representantes de grandes laboratórios farmacêuticos, desclassificando concorrentes legítimos em troca de propinas de até 10% do valor dos lotes.",
     judicialDetails: "A PF cumpriu 42 mandados de prisão, detendo lobistas e servidores públicos. O então ministro da Saúde, Humberto Costa, chegou a ser denunciado pelo Ministério Público Federal em 2006 por negligência administrativa e corrupção, mas foi plenamente absolvido pela Justiça Federal em 2010 por ausência de provas de envolvimento.",
     sources: [
-      { name: "Folha de S.Paulo - Entenda a Operação Vampiro", url: "https://www1.folha.uol.com.br/folha/brasil/ult96u60706.shtml", type: "Jornalístico" },
-      { name: "G1 - Justiça absolve ex-ministro Humberto Costa na Operação Vampiro", url: "https://g1.globo.com/politica/noticia/2010/05/justica-absolve-ex-ministro-humberto-costa-na-operacao-vampiro.html", type: "Jornalístico" },
-      { name: "Controladoria-Geral da União (CGU) - Auditorias", url: "https://www.gov.br/cgu/pt-br", type: "Oficial/Judicial" }
+      { name: "Folha de S.Paulo - Entenda a Operação Vampiro", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Entenda%20a%20Opera%C3%A7%C3%A3o%20Vampiro", type: "Jornalístico" },
+      { name: "G1 - Justiça absolve ex-ministro Humberto Costa na Operação Vampiro", url: "https://www.google.com/search?q=G1%20-%20Justi%C3%A7a%20absolve%20ex-ministro%20Humberto%20Costa%20na%20Opera%C3%A7%C3%A3o%20Vampiro", type: "Jornalístico" },
+      { name: "Controladoria-Geral da União (CGU) - Auditorias", url: "https://www.google.com/search?q=Controladoria-Geral%20da%20Uni%C3%A3o%20(CGU)%20-%20Auditorias", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -74,10 +74,10 @@ const SCANDALS_DATA = [
     modusOperandi: "Recursos públicos eram desviados de estatais — com destaque para o Fundo Visanet do Banco do Brasil gerido por Henrique Pizzolato — e de contratos de publicidade inflados com as agências DNA e SMP&B de Marcos Valério. Os recursos eram lavados por meio de empréstimos fictícios concedidos pelos bancos Rural e BMG e sacados na 'boca do caixa' em Brasília e Belo Horizonte por parlamentares e emissários.",
     judicialDetails: "Julgado pelo Plenário do STF entre 2012 e 2013 na histórica Ação Penal 470 (relatoria de Joaquim Barbosa). O STF condenou 25 réus. José Dirceu foi condenado a 7 anos e 11 meses de prisão como 'chefe do organograma criminoso'; Delúbio Soares a 6 anos e 8 meses; José Genoino a 4 anos e 8 meses; Marcos Valério a 37 anos e 5 meses. Henrique Pizzolato fugiu para a Itália e foi extraditado. Posteriormente, vários condenados obtiveram indultos natalinos de penas privativas após cumprir frações da pena.",
     sources: [
-      { name: "STF - Acórdão da Ação Penal 470 (Mensalão)", url: "https://portal.stf.jus.br/processos/detalhe.asp?incidente=2374354", type: "Oficial/Judicial" },
-      { name: "G1 - Especial Mensalão: O Julgamento no STF e Condenações", url: "https://g1.globo.com/politica/mensalao/", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Cobertura Histórica do Mensalão", url: "https://temas.folha.uol.com.br/mensalao/", type: "Jornalístico" },
-      { name: "BBC News Brasil - Como o Mensalão redefiniu a política brasileira", url: "https://www.bbc.com/portuguese/brasil-62389650", type: "Jornalístico" }
+      { name: "STF - Acórdão da Ação Penal 470 (Mensalão)", url: "https://www.google.com/search?q=STF%20-%20Ac%C3%B3rd%C3%A3o%20da%20A%C3%A7%C3%A3o%20Penal%20470%20(Mensal%C3%A3o)", type: "Oficial/Judicial" },
+      { name: "G1 - Especial Mensalão: O Julgamento no STF e Condenações", url: "https://www.google.com/search?q=G1%20-%20Especial%20Mensal%C3%A3o%3A%20O%20Julgamento%20no%20STF%20e%20Condena%C3%A7%C3%B5es", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Cobertura Histórica do Mensalão", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Cobertura%20Hist%C3%B3rica%20do%20Mensal%C3%A3o", type: "Jornalístico" },
+      { name: "BBC News Brasil - Como o Mensalão redefiniu a política brasileira", url: "https://www.google.com/search?q=BBC%20News%20Brasil%20-%20Como%20o%20Mensal%C3%A3o%20redefiniu%20a%20pol%C3%ADtica%20brasileira", type: "Jornalístico" }
     ]
   },
   {
@@ -99,8 +99,8 @@ const SCANDALS_DATA = [
     modusOperandi: "Loteamento de diretorias estratégicas da ECT para partidos da base aliada. Em troca do controle dos cargos, os indicados fraudavam licitações de transporte, logística e encomendas em benefício de empresas que pagavam mesadas aos partidos.",
     judicialDetails: "Marinho foi demitido e preso. A crise política escalou rapidamente, culminando na CPI dos Correios no Congresso Nacional. Encurralado e isolado pela cúpula do governo, Roberto Jefferson convocou a célebre entrevista à Folha de S.Paulo denunciando a existência do Mensalão e apontando José Dirceu e Delúbio Soares como operadores centrais.",
     sources: [
-      { name: "Folha de S.Paulo - Vídeo mostra servidor dos Correios recebendo propina", url: "https://www1.folha.uol.com.br/fsp/brasil/fc1505200502.htm", type: "Jornalístico" },
-      { name: "G1 - Maurício Marinho é condenado pela Justiça Federal", url: "https://g1.globo.com/politica/noticia/2012/10/ex-chefe-dos-correios-que-deu-origem-ao-mensalao-e-condenado.html", type: "Jornalístico" }
+      { name: "Folha de S.Paulo - Vídeo mostra servidor dos Correios recebendo propina", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20V%C3%ADdeo%20mostra%20servidor%20dos%20Correios%20recebendo%20propina", type: "Jornalístico" },
+      { name: "G1 - Maurício Marinho é condenado pela Justiça Federal", url: "https://www.google.com/search?q=G1%20-%20Maur%C3%ADcio%20Marinho%20%C3%A9%20condenado%20pela%20Justi%C3%A7a%20Federal", type: "Jornalístico" }
     ]
   },
   {
@@ -122,8 +122,8 @@ const SCANDALS_DATA = [
     modusOperandi: "Assessores parlamentares e prefeitos recebiam entre 10% e 15% de propina em dinheiro vivo sobre o valor de cada emenda liberada pelo Ministério da Saúde. Licitações municipais eram inteiramente montadas com empresas fantasmas pertencentes ao clã Vedoin.",
     judicialDetails: "A CPI dos Sanguessugas indiciou 69 deputados federais e 3 senadores. Dezenas de políticos não se reelegeram ou renunciaram para escapar da perda de direitos políticos. A Justiça Federal do Mato Grosso condenou os empresários Darci e Luiz Antônio Vedoin a mais de 16 anos de prisão.",
     sources: [
-      { name: "G1 - Entenda o escândalo dos sanguessugas", url: "https://g1.globo.com/Noticias/Politica/0,,AA1263884-5601,00.html", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - CPI conclui relatório da máfia das ambulâncias", url: "https://www1.folha.uol.com.br/fsp/brasil/fc1108200602.htm", type: "Jornalístico" }
+      { name: "G1 - Entenda o escândalo dos sanguessugas", url: "https://www.google.com/search?q=G1%20-%20Entenda%20o%20esc%C3%A2ndalo%20dos%20sanguessugas", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - CPI conclui relatório da máfia das ambulâncias", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20CPI%20conclui%20relat%C3%B3rio%20da%20m%C3%A1fia%20das%20ambul%C3%A2ncias", type: "Jornalístico" }
     ]
   },
   {
@@ -145,9 +145,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Emissários do PT negociaram com Luiz Antônio Vedoin (da máfia das ambulâncias) documentos e fotos falsificadas que pretendiam ligar políticos do PSDB ao esquema das ambulâncias. O pagamento seria feito integralmente em dinheiro vivo não rastreado.",
     judicialDetails: "O próprio presidente Lula desabafou à época chamando os envolvidos de 'um bando de aloprados'. Os operadores foram presos em flagrante. Contudo, em 2012, a Justiça Federal arquivou o processo criminal contra os principais acusados por falta de provas quanto à tipificação de crime financeiro e ausência de comprovação da origem ilícita direta dos fundos apreendidos.",
     sources: [
-      { name: "Folha de S.Paulo - PF flagra petistas com R$ 1,7 milhão para dossiê", url: "https://www1.folha.uol.com.br/fsp/brasil/fc1609200602.htm", type: "Jornalístico" },
-      { name: "G1 - Justiça arquiva inquérito do dossiê dos aloprados", url: "https://g1.globo.com/politica/noticia/2012/12/justica-arquiva-inquerito-do-dossie-com-dinheiro-do-pt.html", type: "Jornalístico" },
-      { name: "Revista Veja - O caso do dossiê antitucano", url: "https://veja.abril.com.br", type: "Jornalístico" }
+      { name: "Folha de S.Paulo - PF flagra petistas com R$ 1,7 milhão para dossiê", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20PF%20flagra%20petistas%20com%20R%24%201%2C7%20milh%C3%A3o%20para%20dossi%C3%AA", type: "Jornalístico" },
+      { name: "G1 - Justiça arquiva inquérito do dossiê dos aloprados", url: "https://www.google.com/search?q=G1%20-%20Justi%C3%A7a%20arquiva%20inqu%C3%A9rito%20do%20dossi%C3%AA%20dos%20aloprados", type: "Jornalístico" },
+      { name: "Revista Veja - O caso do dossiê antitucano", url: "https://www.google.com/search?q=Revista%20Veja%20-%20O%20caso%20do%20dossi%C3%AA%20antitucano", type: "Jornalístico" }
     ]
   },
   {
@@ -169,9 +169,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Zuleido Veras distribuía maços de dinheiro em envelopes a servidores graduados, prefeitos e autoridades de ministérios em troca de direcionamento de licitações e liberação rápida de verbas do Orçamento da União. O ministro Silas Rondeau foi flagrado em gravações e relatórios da PF recebendo envelope de propina de R$ 100 mil em seu gabinete.",
     judicialDetails: "Silas Rondeau pediu demissão do ministério sob pressão política. Em 2011 e nos anos posteriores, no entanto, o Superior Tribunal de Justiça (STJ) e o STF declararam a nulidade de escutas telefônicas e buscas e apreensões por vícios na autorização judicial e quebra de cadeia de custódia, desidratando o processo judicial contra a cúpula dos acusados.",
     sources: [
-      { name: "G1 - Ministro de Minas e Energia pede demissão após Navalha", url: "https://g1.globo.com/Noticias/Politica/0,,AA1550269-5601,00.html", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Navalha expõe propina na Esplanada", url: "https://www1.folha.uol.com.br/folha/brasil/ult96u92731.shtml", type: "Jornalístico" },
-      { name: "Superior Tribunal de Justiça (STJ) - Decisões Operação Navalha", url: "https://www.stj.jus.br", type: "Oficial/Judicial" }
+      { name: "G1 - Ministro de Minas e Energia pede demissão após Navalha", url: "https://www.google.com/search?q=G1%20-%20Ministro%20de%20Minas%20e%20Energia%20pede%20demiss%C3%A3o%20ap%C3%B3s%20Navalha", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Navalha expõe propina na Esplanada", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Navalha%20exp%C3%B5e%20propina%20na%20Esplanada", type: "Jornalístico" },
+      { name: "Superior Tribunal de Justiça (STJ) - Decisões Operação Navalha", url: "https://www.google.com/search?q=Superior%20Tribunal%20de%20Justi%C3%A7a%20(STJ)%20-%20Decis%C3%B5es%20Opera%C3%A7%C3%A3o%20Navalha", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -193,9 +193,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Autoridades utilizavam cartões destinados exclusivamente a despesas emergenciais de pequeno vulto (suprimento de fundos) para gastos pessoais ou para saques vultosos em caixas eletrônicos sem necessidade de prestação de contas detalhada aos órgãos de controle.",
     judicialDetails: "A ministra Matilde Ribeiro gastou mais de R$ 171 mil (incluindo compras em freeshop) e pediu demissão imediata; foi condenada pelo TCU e pela Justiça Federal por improbidade administrativa a devolver recursos. O ministro Orlando Silva devolveu R$ 8,30 gastos em uma tapioca e outros R$ 30 mil aos cofres públicos. O governo federal editou decreto impondo limite rígido e proibindo saques em dinheiro.",
     sources: [
-      { name: "Folha de S.Paulo - Matilde Ribeiro pede demissão do governo", url: "https://www1.folha.uol.com.br/fsp/brasil/fc0202200802.htm", type: "Jornalístico" },
-      { name: "G1 - Ministro do Esporte devolve recursos do cartão", url: "https://g1.globo.com/Noticias/Politica/0,,MUL293544-5601,00.html", type: "Jornalístico" },
-      { name: "TCU - Acórdão sobre Auditoria nos Cartões Corporativos", url: "https://pesquisa.apps.tcu.gov.br", type: "Oficial/Judicial" }
+      { name: "Folha de S.Paulo - Matilde Ribeiro pede demissão do governo", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Matilde%20Ribeiro%20pede%20demiss%C3%A3o%20do%20governo", type: "Jornalístico" },
+      { name: "G1 - Ministro do Esporte devolve recursos do cartão", url: "https://www.google.com/search?q=G1%20-%20Ministro%20do%20Esporte%20devolve%20recursos%20do%20cart%C3%A3o", type: "Jornalístico" },
+      { name: "TCU - Acórdão sobre Auditoria nos Cartões Corporativos", url: "https://www.google.com/search?q=TCU%20-%20Ac%C3%B3rd%C3%A3o%20sobre%20Auditoria%20nos%20Cart%C3%B5es%20Corporativos", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -217,9 +217,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Diretores da Petrobras aprovaram no Conselho de Administração a compra sem alertar sobre cláusulas prejudiciais altamente favoráveis à Astra Oil. Em troca, diretores e operadores do esquema do Petrolão receberam US$ 15 milhões em propinas divididas na Suíça.",
     judicialDetails: "Em 2014, o TCU condenou Nestor Cerveró, José Sérgio Gabrielli e outros diretores a devolver US$ 79 milhões aos cofres públicos. Dilma Rousseff, que presidia o Conselho de Administração em 2006, afirmou em nota oficial que votou a favor da compra amparada em resumo executivo elaborado por Cerveró que era 'técnica e juridicamente falho e omisso'. O TCU isentou Dilma de dolo e responsabilidade pelo ressarcimento em 2021.",
     sources: [
-      { name: "TCU - Acórdão do Processo de Pasadena (TC 005.406/2013-7)", url: "https://pesquisa.apps.tcu.gov.br", type: "Oficial/Judicial" },
-      { name: "G1 - Dilma diz que aprovou compra de Pasadena com base em relatório falho", url: "https://g1.globo.com/politica/noticia/2014/03/dilma-diz-que-aprovou-compra-de-pasadena-com-relatorio-falho.html", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - TCU condena Cerveró e Gabrielli por prejuízo em Pasadena", url: "https://www1.folha.uol.com.br/poder/2017/08/1914526-tcu-condena-gabrielli-e-cervero-a-ressarcir-petrobras-por-pasadena.shtml", type: "Jornalístico" }
+      { name: "TCU - Acórdão do Processo de Pasadena (TC 005.406/2013-7)", url: "https://www.google.com/search?q=TCU%20-%20Ac%C3%B3rd%C3%A3o%20do%20Processo%20de%20Pasadena%20(TC%20005.406%2F2013-7)", type: "Oficial/Judicial" },
+      { name: "G1 - Dilma diz que aprovou compra de Pasadena com base em relatório falho", url: "https://www.google.com/search?q=G1%20-%20Dilma%20diz%20que%20aprovou%20compra%20de%20Pasadena%20com%20base%20em%20relat%C3%B3rio%20falho", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - TCU condena Cerveró e Gabrielli por prejuízo em Pasadena", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20TCU%20condena%20Cerver%C3%B3%20e%20Gabrielli%20por%20preju%C3%ADzo%20em%20Pasadena", type: "Jornalístico" }
     ]
   },
   {
@@ -241,8 +241,8 @@ const SCANDALS_DATA = [
     modusOperandi: "O escritório de advocacia de Israel Guerra em Brasília funcionava como balcão de negócios, cobrando 'honorários de intermediação' de empresários de transporte aéreo de carga (como a Master Top Linhas Aéreas - MTA) que pleiteavam renovações de contratos com o governo federal.",
     judicialDetails: "Erenice Guerra renunciou ao cargo em setembro de 2010 após a demissão de assessores e a instauração de inquérito pela Polícia Federal. Em 2014, o Ministério Público Federal no DF arquivou parte das acusações por falta de comprovação de recebimento direto pela ministra, e outras acusações prescreveram.",
     sources: [
-      { name: "Folha de S.Paulo - Erenice Guerra pede demissão da Casa Civil", url: "https://www1.folha.uol.com.br/fsp/poder/po1709201002.htm", type: "Jornalístico" },
-      { name: "G1 - Entenda as denúncias que levaram à queda de Erenice Guerra", url: "https://g1.globo.com/politica/noticia/2010/09/entenda-denuncias-que-levaram-queda-de-erenice-guerra.html", type: "Jornalístico" }
+      { name: "Folha de S.Paulo - Erenice Guerra pede demissão da Casa Civil", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Erenice%20Guerra%20pede%20demiss%C3%A3o%20da%20Casa%20Civil", type: "Jornalístico" },
+      { name: "G1 - Entenda as denúncias que levaram à queda de Erenice Guerra", url: "https://www.google.com/search?q=G1%20-%20Entenda%20as%20den%C3%BAncias%20que%20levaram%20%C3%A0%20queda%20de%20Erenice%20Guerra", type: "Jornalístico" }
     ]
   },
   {
@@ -264,9 +264,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Delações premiadas de executivos da Odebrecht revelaram que Lula e ministros atuavam como 'fiadores e lobistas' internacionais junto a líderes estrangeiros para fechar pacotes de obras financiados pelo banco estatal brasileiro, cobrando propinas pagas em contas secretas no exterior ou doações a campanhas e palestras do Instituto Lula.",
     judicialDetails: "A Operação Janus e a Lava Jato denunciaram Lula por tráfico de influência internacional e corrupção. No entanto, em 2020 e 2021, o Tribunal Regional Federal da 1ª Região (TRF-1) e o STF trancaram as ações penais contra Lula e ex-ministros por inépcia da denúncia e falta de elementos de justa causa.",
     sources: [
-      { name: "Poder360 - BNDES no exterior: entenda os empréstimos e os calotes", url: "https://www.poder360.com.br/economia/bndes-ja-emprestou-us-105-bi-para-obras-no-exterior-leia-os-dados/", type: "Jornalístico" },
-      { name: "O Estado de S. Paulo - BNDES financiou US$ 10,5 bi em obras fora do país", url: "https://www.estadao.com.br", type: "Jornalístico" },
-      { name: "Tribunal de Contas da União (TCU) - Auditorias no BNDES", url: "https://portal.tcu.gov.br", type: "Oficial/Judicial" }
+      { name: "Poder360 - BNDES no exterior: entenda os empréstimos e os calotes", url: "https://www.google.com/search?q=Poder360%20-%20BNDES%20no%20exterior%3A%20entenda%20os%20empr%C3%A9stimos%20e%20os%20calotes", type: "Jornalístico" },
+      { name: "O Estado de S. Paulo - BNDES financiou US$ 10,5 bi em obras fora do país", url: "https://www.google.com/search?q=O%20Estado%20de%20S.%20Paulo%20-%20BNDES%20financiou%20US%24%2010%2C5%20bi%20em%20obras%20fora%20do%20pa%C3%ADs", type: "Jornalístico" },
+      { name: "Tribunal de Contas da União (TCU) - Auditorias no BNDES", url: "https://www.google.com/search?q=Tribunal%20de%20Contas%20da%20Uni%C3%A3o%20(TCU)%20-%20Auditorias%20no%20BNDES", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -288,8 +288,8 @@ const SCANDALS_DATA = [
     modusOperandi: "Palocci prestava supostas consultorias a bancos, fundos de investimento e grandes corporações multinacionais interessadas em decisões regulatórias e orçamentárias do governo federal, recusando-se a divulgar publicamente a lista de clientes alegando sigilo contratual.",
     judicialDetails: "Após pressão da imprensa e partidos da oposição, Palocci caiu em junho de 2011, deflagrando a série de quedas de ministros conhecida como 'faxina ética' de Dilma. Anos depois, Palocci foi preso na Operação Lava Jato (2016) e firmou delação premiada homologada pelo TRF-4, confessando repasses ilícitos de dezenas de milhões ao PT.",
     sources: [
-      { name: "Folha de S.Paulo - Patrimônio de Palocci multiplica por 20 em quatro anos", url: "https://www1.folha.uol.com.br/poder/2011/05/916053-patrimonio-de-palocci-se-multiplica-por-20-em-4-anos.shtml", type: "Jornalístico" },
-      { name: "G1 - Antonio Palocci pede demissão da Casa Civil", url: "https://g1.globo.com/politica/noticia/2011/06/palocci-pede-demissao-da-casa-civil.html", type: "Jornalístico" }
+      { name: "Folha de S.Paulo - Patrimônio de Palocci multiplica por 20 em quatro anos", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Patrim%C3%B4nio%20de%20Palocci%20multiplica%20por%2020%20em%20quatro%20anos", type: "Jornalístico" },
+      { name: "G1 - Antonio Palocci pede demissão da Casa Civil", url: "https://www.google.com/search?q=G1%20-%20Antonio%20Palocci%20pede%20demiss%C3%A3o%20da%20Casa%20Civil", type: "Jornalístico" }
     ]
   },
   {
@@ -311,9 +311,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Rosemary Noronha, nomeada por Lula como chefe do gabinete da Presidência da República em São Paulo, usava sua influência direta e o nome do ex-presidente para indicar e manter aliados em cargos estratégicos em troca de vantagens indevidas: viagens internacionais, cirurgias plásticas, reformas imobiliárias e mesadas.",
     judicialDetails: "Rosemary foi demitida sumariamente por Dilma Rousseff no dia seguinte à operação. Em 2020, a Justiça Federal de São Paulo condenou Rosemary Noronha a 9 anos de prisão por corrupção passiva e falsidade ideológica; os irmãos Paulo e Rubens Vieira também foram condenados a penas superiores a 10 anos.",
     sources: [
-      { name: "G1 - Rosemary Noronha é condenada a 9 anos de prisão na Porto Seguro", url: "https://g1.globo.com/sp/sao-paulo/noticia/2020/03/10/rosemary-noronha-amiga-de-lula-e-condenada-a-9-anos-de-prisao-por-corrupcao-na-operacao-porto-seguro.ghtml", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Dilma demite Rosemary Noronha do gabinete de SP", url: "https://www1.folha.uol.com.br/poder/2012/11/1190760-dilma-exonera-rosemary-noronha-do-cargo-de-chefe-de-gabinete-em-sp.shtml", type: "Jornalístico" },
-      { name: "Ministério Público Federal (MPF) - Denúncia Porto Seguro", url: "https://www.mpf.mp.br", type: "Oficial/Judicial" }
+      { name: "G1 - Rosemary Noronha é condenada a 9 anos de prisão na Porto Seguro", url: "https://www.google.com/search?q=G1%20-%20Rosemary%20Noronha%20%C3%A9%20condenada%20a%209%20anos%20de%20pris%C3%A3o%20na%20Porto%20Seguro", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Dilma demite Rosemary Noronha do gabinete de SP", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Dilma%20demite%20Rosemary%20Noronha%20do%20gabinete%20de%20SP", type: "Jornalístico" },
+      { name: "Ministério Público Federal (MPF) - Denúncia Porto Seguro", url: "https://www.google.com/search?q=Minist%C3%A9rio%20P%C3%BAblico%20Federal%20(MPF)%20-%20Den%C3%BAncia%20Porto%20Seguro", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -335,10 +335,10 @@ const SCANDALS_DATA = [
     modusOperandi: "Empreiteiras combinavam previamente propostas em licitações fechadas, inflavam custos com aditivos sucessivos e repassavam propinas através de operadores financeiros e doleiros (Alberto Youssef, Fernando Baiano). O dinheiro era lavado em empresas de fachada, repassado em malas de dinheiro e depositado em contas offshore na Suíça, abastecendo o caixa 1 e caixa 2 dos partidos governistas e o enriquecimento de executivos.",
     judicialDetails: "A operação realizou 79 fases, homologou mais de 200 acordos de colaboração e gerou 278 condenações em 1ª instância. Lula foi condenado por Sergio Moro e pelo TRF-4 no caso do Triplex do Guarujá e do Sítio de Atibaia, ficando preso por 580 dias. Em 2021, o plenário do STF anulou todas as condenações de Lula por incompetência territorial da 13ª Vara Federal de Curitiba e declarou a suspeição de Sergio Moro por parcialidade. Em 2023-2024, decisões do STF (Min. Dias Toffoli) suspenderam multas de acordos de leniência de empresas como Odebrecht e J&F.",
     sources: [
-      { name: "MPF - Resultados e Balanço Geral da Lava Jato", url: "https://www.mpf.mp.br/grandes-casos/lava-jato/resultados", type: "Oficial/Judicial" },
-      { name: "Petrobras - Demonstrações Contábeis e Baixa da Corrupção (Form 20-F SEC)", url: "https://www.investidorpetrobras.com.br", type: "Oficial/Judicial" },
-      { name: "G1 - Especial Lava Jato: Do início às anulações no STF", url: "https://g1.globo.com/politica/operacao-lava-jato/", type: "Jornalístico" },
-      { name: "BBC News Brasil - Por que o STF anulou as condenações de Lula", url: "https://www.bbc.com/portuguese/brasil-56763442", type: "Jornalístico" }
+      { name: "MPF - Resultados e Balanço Geral da Lava Jato", url: "https://www.google.com/search?q=MPF%20-%20Resultados%20e%20Balan%C3%A7o%20Geral%20da%20Lava%20Jato", type: "Oficial/Judicial" },
+      { name: "Petrobras - Demonstrações Contábeis e Baixa da Corrupção (Form 20-F SEC)", url: "https://www.google.com/search?q=Petrobras%20-%20Demonstra%C3%A7%C3%B5es%20Cont%C3%A1beis%20e%20Baixa%20da%20Corrup%C3%A7%C3%A3o%20(Form%2020-F%20SEC)", type: "Oficial/Judicial" },
+      { name: "G1 - Especial Lava Jato: Do início às anulações no STF", url: "https://www.google.com/search?q=G1%20-%20Especial%20Lava%20Jato%3A%20Do%20in%C3%ADcio%20%C3%A0s%20anula%C3%A7%C3%B5es%20no%20STF", type: "Jornalístico" },
+      { name: "BBC News Brasil - Por que o STF anulou as condenações de Lula", url: "https://www.google.com/search?q=BBC%20News%20Brasil%20-%20Por%20que%20o%20STF%20anulou%20as%20condena%C3%A7%C3%B5es%20de%20Lula", type: "Jornalístico" }
     ]
   },
   {
@@ -360,8 +360,8 @@ const SCANDALS_DATA = [
     modusOperandi: "Estaleiros nacionais e internacionais pagavam comissões através de contratos de consultoria fraudulentos com operadores no exterior. Metade da propina ficava com o corpo técnico corrupto da Petrobras e a outra metade era destinada ao PT para custeio eleitoral.",
     judicialDetails: "Pedro Barusco confessou os crimes e devolveu voluntariamente US$ 97 milhões mantidos na Suíça aos cofres da Petrobras e da União — a maior devolução individual da história brasileira. A Sete Brasil colapsou e entrou em recuperação judicial, gerando prejuízos massivos para os fundos de pensão de trabalhadores.",
     sources: [
-      { name: "G1 - Ex-gerente da Petrobras devolve US$ 97 milhões na Lava Jato", url: "https://g1.globo.com/pr/parana/noticia/2015/05/petrobras-recebe-us-97-milhoes-devolvidos-por-pedro-barusco.html", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Sete Brasil quebra após escândalo de sondas", url: "https://www1.folha.uol.com.br/mercado/2016/04/1765874-sete-brasil-aprova-pedido-de-recuperacao-judicial.shtml", type: "Jornalístico" }
+      { name: "G1 - Ex-gerente da Petrobras devolve US$ 97 milhões na Lava Jato", url: "https://www.google.com/search?q=G1%20-%20Ex-gerente%20da%20Petrobras%20devolve%20US%24%2097%20milh%C3%B5es%20na%20Lava%20Jato", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Sete Brasil quebra após escândalo de sondas", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Sete%20Brasil%20quebra%20ap%C3%B3s%20esc%C3%A2ndalo%20de%20sondas", type: "Jornalístico" }
     ]
   },
   {
@@ -383,9 +383,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Ao reter os repasses, o governo forçou os bancos estatais a financiarem despesas governamentais com recursos próprios, o que configurou operação de crédito ilegal entre estatal e seu acionista controlador, proibida terminantemente pelo art. 36 da Lei de Responsabilidade Fiscal (LRF).",
     judicialDetails: "Em decisão histórica por unanimidade, o TCU rejeitou as contas do governo Dilma de 2014 e 2015. O relatório serviu como peça central do processo de Impeachment, aprovado pela Câmara dos Deputados (367 x 137) e pelo Senado Federal (61 x 20) em 31 de agosto de 2016, destituindo Dilma da Presidência da República. Em 2023, o TRF-1 extinguiu sem julgamento de mérito a ação civil de improbidade contra Dilma por falta de tipificação de dolo específico após a nova lei de improbidade.",
     sources: [
-      { name: "TCU - Acórdão da Rejeição das Contas de Dilma (Acórdão 2461/2015)", url: "https://portal.tcu.gov.br", type: "Oficial/Judicial" },
-      { name: "G1 - Senado aprova impeachment de Dilma Rousseff por 61 votos a 20", url: "https://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/08/senado-aprova-impeachment-e-afasta-definitivamente-dilma-da-presidencia.html", type: "Jornalístico" },
-      { name: "BBC News Brasil - O que foram as 'pedaladas fiscais' que embasaram o impeachment", url: "https://www.bbc.com/portuguese/brasil-37213454", type: "Jornalístico" }
+      { name: "TCU - Acórdão da Rejeição das Contas de Dilma (Acórdão 2461/2015)", url: "https://www.google.com/search?q=TCU%20-%20Ac%C3%B3rd%C3%A3o%20da%20Rejei%C3%A7%C3%A3o%20das%20Contas%20de%20Dilma%20(Ac%C3%B3rd%C3%A3o%202461%2F2015)", type: "Oficial/Judicial" },
+      { name: "G1 - Senado aprova impeachment de Dilma Rousseff por 61 votos a 20", url: "https://www.google.com/search?q=G1%20-%20Senado%20aprova%20impeachment%20de%20Dilma%20Rousseff%20por%2061%20votos%20a%2020", type: "Jornalístico" },
+      { name: "BBC News Brasil - O que foram as 'pedaladas fiscais' que embasaram o impeachment", url: "https://www.google.com/search?q=BBC%20News%20Brasil%20-%20O%20que%20foram%20as%20'pedaladas%20fiscais'%20que%20embasaram%20o%20impeachment", type: "Jornalístico" }
     ]
   },
   {
@@ -407,9 +407,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Empresas de consultoria de fachada contratadas por montadoras (como MMC e CAOA) pagavam propinas a agentes públicos e lobistas para redigir e aprovar prorrogações de incentivos fiscais automotivos. A empresa LFT Marketing de Luís Cláudio Lula da Silva recebeu repasses de R$ 2,5 milhões do lobista Mauro Marcondes por relatórios copiados da internet.",
     judicialDetails: "A 10ª Vara Federal do DF condenou lobistas e ex-conselheiros do CARF a penas de até 11 anos de prisão. Em 2021, a Justiça Federal de Brasília absolveu Lula e Gilberto Carvalho das acusações relativas à MP 471 por ausência de elementos probatórios contundentes que comprovassem corrupção passiva nos atos de edição da medida provisória.",
     sources: [
-      { name: "MPF - Ações e denúncias da Operação Zelotes", url: "https://www.mpf.mp.br", type: "Oficial/Judicial" },
-      { name: "Folha de S.Paulo - Zelotes: Entenda as fraudes investigadas no CARF e MPs", url: "https://www1.folha.uol.com.br/poder/2015/10/1698748-entenda-a-operacao-zelotes-e-o-envolvimento-da-familia-lula.shtml", type: "Jornalístico" },
-      { name: "G1 - Justiça Federal absolve Lula e Gilberto Carvalho na Zelotes", url: "https://g1.globo.com/politica/noticia/2021/06/21/justica-federal-absolve-lula-e-gilberto-carvalho-em-acao-da-zelotes.ghtml", type: "Jornalístico" }
+      { name: "MPF - Ações e denúncias da Operação Zelotes", url: "https://www.google.com/search?q=MPF%20-%20A%C3%A7%C3%B5es%20e%20den%C3%BAncias%20da%20Opera%C3%A7%C3%A3o%20Zelotes", type: "Oficial/Judicial" },
+      { name: "Folha de S.Paulo - Zelotes: Entenda as fraudes investigadas no CARF e MPs", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Zelotes%3A%20Entenda%20as%20fraudes%20investigadas%20no%20CARF%20e%20MPs", type: "Jornalístico" },
+      { name: "G1 - Justiça Federal absolve Lula e Gilberto Carvalho na Zelotes", url: "https://www.google.com/search?q=G1%20-%20Justi%C3%A7a%20Federal%20absolve%20Lula%20e%20Gilberto%20Carvalho%20na%20Zelotes", type: "Jornalístico" }
     ]
   },
   {
@@ -431,8 +431,8 @@ const SCANDALS_DATA = [
     modusOperandi: "O Ministério do Planejamento terceirizou o controle do sistema de consignados de servidores federais sem licitação para associações (Sinapp e ABBC), que contrataram a Consist. A Consist inflava o custo cobrado de bancos em R$ 1 por operação e desviava esse sobrepreço por meio de contratos fictícios com escritórios de advocacia ligados a Paulo Bernardo e ao tesoureiro do PT.",
     judicialDetails: "Paulo Bernardo foi preso pela PF, mas solto pelo STF dias depois. Em 2018 e 2019, o STF e o Tribunal Regional Federal redistribuíram partes do processo para a Justiça Eleitoral, e acusações foram arquivadas em relação à Gleisi Hoffmann por insuficiência probatória.",
     sources: [
-      { name: "G1 - Polícia Federal deflagra Custo Brasil e prende ex-ministro Paulo Bernardo", url: "https://g1.globo.com/sao-paulo/noticia/2016/06/pf-faz-operacao-ligada-lava-jato-em-sao-paulo-brasilia-e-mais-dois-estados.html", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Esquema no Planejamento desviou R$ 100 milhões da Consist", url: "https://www1.folha.uol.com.br/poder/2016/06/1785055-entenda-como-funcionava-o-esquema-de-paulo-bernardo-na-custo-brasil.shtml", type: "Jornalístico" }
+      { name: "G1 - Polícia Federal deflagra Custo Brasil e prende ex-ministro Paulo Bernardo", url: "https://www.google.com/search?q=G1%20-%20Pol%C3%ADcia%20Federal%20deflagra%20Custo%20Brasil%20e%20prende%20ex-ministro%20Paulo%20Bernardo", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Esquema no Planejamento desviou R$ 100 milhões da Consist", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Esquema%20no%20Planejamento%20desviou%20R%24%20100%20milh%C3%B5es%20da%20Consist", type: "Jornalístico" }
     ]
   },
   {
@@ -454,9 +454,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Dirigentes dos fundos recebiam propinas para aprovar compras de debêntures e participações acionárias de projetos inviáveis com laudos de avaliação manipulados. O ágio era devolvido aos partidos e lobistas através de contas no exterior.",
     judicialDetails: "A Justiça Federal determinou o bloqueio de R$ 8 bilhões em bens. O grupo J&F (dos irmãos Batista) celebrou um acordo de leniência recorde no MPF se comprometendo a pagar R$ 10,3 bilhões aos fundos de pensão e estatais afetadas.",
     sources: [
-      { name: "Polícia Federal - Balanço da Operação Greenfield", url: "https://www.gov.br/pf/pt-br", type: "Oficial/Judicial" },
-      { name: "Folha de S.Paulo - Greenfield atinge quatro maiores fundos de pensão do país", url: "https://www1.folha.uol.com.br/poder/2016/09/1810574-entenda-a-operacao-greenfield-que-mira-fundos-de-pensao.shtml", type: "Jornalístico" },
-      { name: "G1 - J&F assina acordo de leniência de R$ 10,3 bilhões", url: "https://g1.globo.com/politica/noticia/jf-assina-acordo-de-leniencia-de-r-103-bilhoes.ghtml", type: "Jornalístico" }
+      { name: "Polícia Federal - Balanço da Operação Greenfield", url: "https://www.google.com/search?q=Pol%C3%ADcia%20Federal%20-%20Balan%C3%A7o%20da%20Opera%C3%A7%C3%A3o%20Greenfield", type: "Oficial/Judicial" },
+      { name: "Folha de S.Paulo - Greenfield atinge quatro maiores fundos de pensão do país", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Greenfield%20atinge%20quatro%20maiores%20fundos%20de%20pens%C3%A3o%20do%20pa%C3%ADs", type: "Jornalístico" },
+      { name: "G1 - J&F assina acordo de leniência de R$ 10,3 bilhões", url: "https://www.google.com/search?q=G1%20-%20J%26F%20assina%20acordo%20de%20leni%C3%AAncia%20de%20R%24%2010%2C3%20bilh%C3%B5es", type: "Jornalístico" }
     ]
   },
   {
@@ -478,9 +478,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Verbas de emendas de relator e individuais foram repassadas à Codevasf, que licitou a pavimentação. A empresa contratada pertencia a 'Eduardo DP', operador investigado por superfaturamento e pagamentos de propinas a parlamentares e prefeitos.",
     judicialDetails: "Em junho de 2024, a Polícia Federal concluiu inquérito e indiciou formalmente Juscelino Filho perante o STF pelos crimes de corrupção passiva, fraude em licitações, falsidade ideológica, lavagem de dinheiro e organização criminosa. O ministro negou qualquer crime, afirmando agir no uso legítimo de suas prerrogativas parlamentares. Lula optou por mantê-lo no ministério aguardando manifestação da Procuradoria-Geral da República (PGR).",
     sources: [
-      { name: "G1 - PF indicia ministro Juscelino Filho por corrupção e desvios na Codevasf", url: "https://g1.globo.com/politica/noticia/2024/06/12/pf-indicia-ministro-das-comunicacoes-juscelino-filho.ghtml", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Indiciamento de Juscelino é o primeiro de ministro de Lula 3", url: "https://www1.folha.uol.com.br/poder/2024/06/pf-indicia-ministro-juscelino-filho-por-corrupcao-passiva-e-organizacao-criminosa.shtml", type: "Jornalístico" },
-      { name: "UOL - Asfalto na fazenda: os detalhes do inquérito contra Juscelino no STF", url: "https://noticias.uol.com.br", type: "Jornalístico" }
+      { name: "G1 - PF indicia ministro Juscelino Filho por corrupção e desvios na Codevasf", url: "https://www.google.com/search?q=G1%20-%20PF%20indicia%20ministro%20Juscelino%20Filho%20por%20corrup%C3%A7%C3%A3o%20e%20desvios%20na%20Codevasf", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Indiciamento de Juscelino é o primeiro de ministro de Lula 3", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Indiciamento%20de%20Juscelino%20%C3%A9%20o%20primeiro%20de%20ministro%20de%20Lula%203", type: "Jornalístico" },
+      { name: "UOL - Asfalto na fazenda: os detalhes do inquérito contra Juscelino no STF", url: "https://www.google.com/search?q=UOL%20-%20Asfalto%20na%20fazenda%3A%20os%20detalhes%20do%20inqu%C3%A9rito%20contra%20Juscelino%20no%20STF", type: "Jornalístico" }
     ]
   },
   {
@@ -502,9 +502,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Descobriu-se que uma das principais corretoras intermediárias que operou as empresas vencedoras pertencia a Robson França, ex-assessor de Neri Geller e sócio do filho do secretário. O conflito de interesses explícito e o risco de calote forçaram o governo a suspender o certame.",
     judicialDetails: "Diante da repercussão negativa e de representações no TCU e na PF, o governo federal cancelou integralmente o leilão em 11 de junho de 2024. Neri Geller foi exonerado do cargo de Secretário de Política Agrícola e o diretor de Abastecimento da Conab foi demitido. Inquéritos da PF, auditorias do TCU e da CGU foram abertos para apurar se houve tentativa de direcionamento e fraude ao erário.",
     sources: [
-      { name: "G1 - Governo anula leilão do arroz e secretário Neri Geller é demitido", url: "https://g1.globo.com/economia/agronegocios/noticia/2024/06/11/governo-cancela-leilao-do-arroz.ghtml", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Empresa de queijo e locadora vencem leilão milionário do arroz", url: "https://www1.folha.uol.com.br/mercado/2024/06/leilao-do-arroz-da-conab-teve-vencedores-sem-historico-no-setor.shtml", type: "Jornalístico" },
-      { name: "CNN Brasil - PF e TCU investigam suspeitas de irregularidades no leilão da Conab", url: "https://www.cnnbrasil.com.br/economia/governo-cancela-leilao-do-arroz/", type: "Jornalístico" }
+      { name: "G1 - Governo anula leilão do arroz e secretário Neri Geller é demitido", url: "https://www.google.com/search?q=G1%20-%20Governo%20anula%20leil%C3%A3o%20do%20arroz%20e%20secret%C3%A1rio%20Neri%20Geller%20%C3%A9%20demitido", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Empresa de queijo e locadora vencem leilão milionário do arroz", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Empresa%20de%20queijo%20e%20locadora%20vencem%20leil%C3%A3o%20milion%C3%A1rio%20do%20arroz", type: "Jornalístico" },
+      { name: "CNN Brasil - PF e TCU investigam suspeitas de irregularidades no leilão da Conab", url: "https://www.google.com/search?q=CNN%20Brasil%20-%20PF%20e%20TCU%20investigam%20suspeitas%20de%20irregularidades%20no%20leil%C3%A3o%20da%20Conab", type: "Jornalístico" }
     ]
   },
   {
@@ -526,9 +526,9 @@ const SCANDALS_DATA = [
     modusOperandi: "Associações firmaram Acordos de Cooperação Técnica com o INSS e inseriram lotes de filiações usando assinaturas forjadas ou autorizações digitais fraudulentas, descontando mensalidades entre R$ 30 e R$ 80 de milhões de aposentados vulneráveis.",
     judicialDetails: "Em maio de 2024, o TCU determinou a suspensão cautelar de novos descontos e exigiu que o INSS implemente validação por biometria ou confirmação expressa pelo aplicativo Meu INSS. A Polícia Federal abriu inquérito criminal para apurar estelionato, invasão de dispositivo e corrupção de servidores do instituto.",
     sources: [
-      { name: "Metrópoles - A farra dos descontos: sindicatos faturam bilhões no INSS", url: "https://www.metropoles.com/brasil/inss-descontos-indevidos-aposentados-sindicatos", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - TCU manda suspender descontos sem autorização no INSS", url: "https://www1.folha.uol.com.br/mercado/2024/05/tcu-manda-inss-suspender-descontos-de-associacoes-em-aposentadorias.shtml", type: "Jornalístico" },
-      { name: "TCU - Decisão Cautelar sobre Mensalidades no INSS", url: "https://pesquisa.apps.tcu.gov.br", type: "Oficial/Judicial" }
+      { name: "Metrópoles - A farra dos descontos: sindicatos faturam bilhões no INSS", url: "https://www.google.com/search?q=Metr%C3%B3poles%20-%20A%20farra%20dos%20descontos%3A%20sindicatos%20faturam%20bilh%C3%B5es%20no%20INSS", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - TCU manda suspender descontos sem autorização no INSS", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20TCU%20manda%20suspender%20descontos%20sem%20autoriza%C3%A7%C3%A3o%20no%20INSS", type: "Jornalístico" },
+      { name: "TCU - Decisão Cautelar sobre Mensalidades no INSS", url: "https://www.google.com/search?q=TCU%20-%20Decis%C3%A3o%20Cautelar%20sobre%20Mensalidades%20no%20INSS", type: "Oficial/Judicial" }
     ]
   },
   {
@@ -550,9 +550,9 @@ const SCANDALS_DATA = [
     modusOperandi: "O escândalo envolveu episódios de importunação sexual e assédio contra colaboradoras e a ministra no âmbito de eventos oficiais do governo federal, além de ingerências indevidas na escolha de fornecedores de TI com supressão de pareceres jurídicos desfavoráveis.",
     judicialDetails: "Lula demitiu Silvio Almeida em 6 de setembro de 2024 sob o fundamento de que a permanência dele no cargo era insustentável diante da gravidade das denúncias. A PF abriu inquérito remetido ao STF para investigar os crimes de assédio sexual e importunação sexual, e a CGU abriu processo administrativo para auditar os contratos da pasta.",
     sources: [
-      { name: "G1 - Lula demite Silvio Almeida após denúncias de assédio sexual", url: "https://g1.globo.com/politica/noticia/2024/09/06/lula-demite-silvio-almeida.ghtml", type: "Jornalístico" },
-      { name: "Folha de S.Paulo - Anielle Franco confirma assédio de Silvio Almeida a ministros", url: "https://www1.folha.uol.com.br/cotidiano/2024/09/anielle-franco-confirma-a-ministros-que-foi-assediada-por-silvio-almeida.shtml", type: "Jornalístico" },
-      { name: "UOL - Inquérito contra Silvio Almeida no STF é instaurado", url: "https://noticias.uol.com.br/politica/ultimas-noticias/2024/09/stf-autoriza-investigacao-contra-silvio-almeida.htm", type: "Jornalístico" }
+      { name: "G1 - Lula demite Silvio Almeida após denúncias de assédio sexual", url: "https://www.google.com/search?q=G1%20-%20Lula%20demite%20Silvio%20Almeida%20ap%C3%B3s%20den%C3%BAncias%20de%20ass%C3%A9dio%20sexual", type: "Jornalístico" },
+      { name: "Folha de S.Paulo - Anielle Franco confirma assédio de Silvio Almeida a ministros", url: "https://www.google.com/search?q=Folha%20de%20S.Paulo%20-%20Anielle%20Franco%20confirma%20ass%C3%A9dio%20de%20Silvio%20Almeida%20a%20ministros", type: "Jornalístico" },
+      { name: "UOL - Inquérito contra Silvio Almeida no STF é instaurado", url: "https://www.google.com/search?q=UOL%20-%20Inqu%C3%A9rito%20contra%20Silvio%20Almeida%20no%20STF%20%C3%A9%20instaurado", type: "Jornalístico" }
     ]
   },
   {
@@ -574,8 +574,8 @@ const SCANDALS_DATA = [
     modusOperandi: "Luciane se apresentava formalmente como presidente de uma ONG de defesa de direitos humanos de presidiários (Associação Instituto Revanche), conseguindo agendas oficiais com a alta cúpula do Ministério da Justiça para pleitear flexibilizações no sistema penitenciário.",
     judicialDetails: "O episódio gerou intensa crise política para o governo e o então ministro Flávio Dino. O Ministério da Justiça admitiu falha grave nos filtros de controle e publicou nova portaria exigindo checagem prévia de antecedentes e autorização de segurança para qualquer visitante na sede do ministério.",
     sources: [
-      { name: "O Estado de S. Paulo - Mulher de líder do Comando Vermelho é recebida no Ministério da Justiça", url: "https://www.estadao.com.br/politica/mulher-de-lider-do-comando-vermelho-e-recebida-por-secretarios-de-flavio-dino-no-ministerio-da-justica/", type: "Jornalístico" },
-      { name: "G1 - Ministério da Justiça endurece regras de entrada após caso de Luciane Farias", url: "https://g1.globo.com/politica/noticia/2023/11/14/ministerio-da-justica-muda-regras-para-audiencias-apos-reunioes-com-mulher-de-lider-do-cv.ghtml", type: "Jornalístico" }
+      { name: "O Estado de S. Paulo - Mulher de líder do Comando Vermelho é recebida no Ministério da Justiça", url: "https://www.google.com/search?q=O%20Estado%20de%20S.%20Paulo%20-%20Mulher%20de%20l%C3%ADder%20do%20Comando%20Vermelho%20%C3%A9%20recebida%20no%20Minist%C3%A9rio%20da%20Justi%C3%A7a", type: "Jornalístico" },
+      { name: "G1 - Ministério da Justiça endurece regras de entrada após caso de Luciane Farias", url: "https://www.google.com/search?q=G1%20-%20Minist%C3%A9rio%20da%20Justi%C3%A7a%20endurece%20regras%20de%20entrada%20ap%C3%B3s%20caso%20de%20Luciane%20Farias", type: "Jornalístico" }
     ]
   }
 ];
