@@ -1,5 +1,7 @@
 # Dossiê Interativo: Escândalos de Corrupção nos Governos do PT (2003–2024)
 
+> 🌐 **Acesse a versão online ao vivo:** [https://adrianohenriquedev.github.io/PTScandals/](https://adrianohenriquedev.github.io/PTScandals/)
+
 Painel analítico e interativo contendo o levantamento histórico e documental dos escândalos de corrupção, operações policiais e desvios apurados durante os mandatos presidenciais do Partido dos Trabalhadores (Lula 1, Lula 2, Dilma 1, Dilma 2 e Lula 3).
 
 ---
